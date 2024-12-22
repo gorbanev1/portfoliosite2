@@ -6,8 +6,13 @@ type FlexWrapperPropsType={
     align?: string
     wrap?: string
     position?: string
-    width?: string
+    maxwidth?: string
     zindex?:string
+    gap?:string
+    margin?:string
+    padding?: string
+    width?: string
+
 }
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
@@ -17,6 +22,10 @@ display: flex;
   align-items: ${props=>props.align||"stretch"};
   flex-wrap: ${props => props.wrap || "nowrap"};
   position: ${props=>props.position||"stretch"};
-  width: ${props=>props.width||"auto"};
+  max-width: ${props=>props.maxwidth||"100"};
   z-index:${props=>props.zindex||"0"} ;
+  gap: ${props=>props.gap||"unset" };
+  margin:  ${props=>props.margin||"unset"};
+  padding: ${props=>props.padding||"unset"};
+  width: ${props=>props.width||"unset"};
 `

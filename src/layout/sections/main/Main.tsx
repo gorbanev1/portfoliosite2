@@ -4,47 +4,70 @@ import photo from '../../../assets/images/Face.png'
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
+import {Text} from "../../../components/Text"
 export const Main = () => {
     return (
         <StyledMain>
             <FlexWrapper position={"absolute"} direction={"column"} zindex={"100"}>
 
-                <h2>
+                <Name>
                     Hello!
                     I’m Zarror Nibors
-                </h2>
+                </Name>
 
-                <h1>
-                    I’am freelance web developer based in Indonesia who loves to craft attractive design experiences for the web.
-                </h1>
-                <FlexWrapper direction={"row"}>
-                <Button>
-                    <Icon iconId={"email"}/>Email me
-                </Button>
-                <span>
-                    <Icon iconId={"cv"}/>
-                    <a href="">Download CV</a>
-                </span>
+                <FlexWrapper maxwidth={"404px"} direction={"column"}>
+                    <MainTitle>
+                        I’am freelance web developer based in Indonesia who loves to craft attractive design experiences
+                        for the web.
+                    </MainTitle>
+                    <FlexWrapper direction={"row"} margin={"0 auto"} padding={"50px 0"} width={"100%"}>
+                        <Button width={"50%"}>
+                            <Icon iconId={"email"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
+                            <Text padding={"20px 40px 20px 10px"}>Email me</Text>
+                        </Button>
+                        <Link>
+
+                            <Icon iconId={"cv"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
+
+                            <Text padding={"10px 20px 10px 5px"}>
+                                <a href="">Download CV</a>
+                            </Text>
+                        </Link>
+                    </FlexWrapper>
                 </FlexWrapper>
-
             </FlexWrapper>
             <Photo src={photo}/>
         </StyledMain>
     );
 };
-const photoUrl=`url( ${photo} )`
-const StyledMain = styled.main`
-  /*background-image: ${photoUrl};
+const photoUrl = `url( ${photo} )`
+const StyledMain = styled.div`
+    /*background-image: ${photoUrl};
   background-repeat: no-repeat;
   background-position: right;*/
   position: relative;
-  `
-const Photo= styled.img`
+  min-height: 743px;
+  background-color: darkgreen;
+`
+const Photo = styled.img`
   width: 721px;
   height: 743px;
   object-fit: cover;
   position: absolute;
   right: 0;
+`
+const MainTitle = styled.h1`
 
+`
+const Name = styled.h2`
+
+`
+
+
+const Link = styled.div`
   
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  width: 50%;
 `
