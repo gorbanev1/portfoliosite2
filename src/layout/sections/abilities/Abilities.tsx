@@ -20,21 +20,21 @@ export const Abilities = () => {
                     <FlexWrapper gap={"15px"}>
                         <Ability>
                             <IconWrapper>
-                                <Icon iconId={"computer"}></Icon>
+                                <Icon iconId={"computer"} margin={"172px 0 0 30px"}></Icon>
                             </IconWrapper>
-                            <Text display={"block"}>Front End Developer</Text>
+                            <Text display={"block"} margin={"0 0 0 30px"}>Front End Developer</Text>
                         </Ability>
                         <Ability>
                             <IconWrapper>
-                                <Icon iconId={"paint"}></Icon>
+                                <Icon iconId={"paint"} margin={"172px 0 0 30px"}></Icon>
                             </IconWrapper>
-                            <Text display={"block"}>UI/UX Designer</Text>
+                            <Text display={"block"} margin={"0 0 0 30px"}>UI/UX Designer</Text>
                         </Ability>
                         <Ability>
                             <IconWrapper>
-                                <Icon iconId={"thunder"} margin={"172px 0 0 0"} display={"block"}></Icon>
+                                <Icon iconId={"thunder"} margin={"172px 0 0 30px"} display={"block"}></Icon>
                             </IconWrapper>
-                            <Text display={"block"}>Branding Designer</Text>
+                            <Text display={"block"} margin={"0 0 0 30px"}>Branding Designer</Text>
                         </Ability>
                     </FlexWrapper>
                 </FlexWrapper>
@@ -50,7 +50,7 @@ const Ability = styled.div`
 
 `
 const IconWrapper = styled.div`
-  margin: 172px 0 0 10px;
+  margin: 172px 0 0 30px;
 `
 const StyledAbilities = styled.div`
 background-color: blue;
