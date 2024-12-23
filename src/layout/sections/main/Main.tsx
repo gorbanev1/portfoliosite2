@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon} from "../../../components/icon/Icon";
-import photo from '../../../assets/images/Face.png'
+import photo from '../../../assets/images/Face.webp'
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
@@ -8,13 +8,12 @@ import {Text} from "../../../components/Text"
 export const Main = () => {
     return (
         <StyledMain>
+            <Photo src={photo}/>
             <FlexWrapper position={"absolute"} direction={"column"} zindex={"100"}>
-
                 <Name>
                     Hello!
                     I’m Zarror Nibors
                 </Name>
-
                 <FlexWrapper maxwidth={"404px"} direction={"column"}>
                     <MainTitle>
                         I’am freelance web developer based in Indonesia who loves to craft attractive design experiences
@@ -26,9 +25,7 @@ export const Main = () => {
                             <Text padding={"20px 40px 20px 10px"}>Email me</Text>
                         </Button>
                         <Link>
-
                             <Icon iconId={"cv"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
-
                             <Text padding={"10px 20px 10px 5px"}>
                                 <a href="">Download CV</a>
                             </Text>
@@ -36,7 +33,6 @@ export const Main = () => {
                     </FlexWrapper>
                 </FlexWrapper>
             </FlexWrapper>
-            <Photo src={photo}/>
         </StyledMain>
     );
 };
@@ -48,6 +44,8 @@ const StyledMain = styled.div`
   position: relative;
   min-height: 743px;
   background-color: darkgreen;
+  display: flex;
+  wrap: wrap;
 `
 const Photo = styled.img`
   width: 721px;
