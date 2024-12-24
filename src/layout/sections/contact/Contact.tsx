@@ -11,13 +11,35 @@ export const Contact = () => {
             <FlexWrapper>
                 <FlexWrapper direction={"column"}>
                     <Text>Let’s Connect</Text>
-                    <FlexWrapper gap={"50px"}>
-                        <Icon iconId={"group"}/>
-                        <Icon iconId={"upwork"}/>
-                        <Icon iconId={"youtube"}/>
-                        <Icon iconId={"linkedin"}/>
-                        <Icon iconId={"github"}/>
-                    </FlexWrapper>
+
+                        <SocialList>
+                            <SocialItem>
+                                <SocialLink>
+                                    <Icon iconId={"group"}/>
+                                </SocialLink>
+                            </SocialItem>
+                            <SocialItem>
+                                <SocialLink>
+                                    <Icon iconId={"upwork"}/>
+                                </SocialLink>
+                            </SocialItem>
+                            <SocialItem>
+                                <SocialLink>
+                                    <Icon iconId={"youtube"}/>
+                                </SocialLink>
+                            </SocialItem>
+                            <SocialItem>
+                                <SocialLink>
+                                    <Icon iconId={"linkedin"}/>
+                                </SocialLink>
+                            </SocialItem>
+                            <SocialItem>
+                                <SocialLink>
+                                    <Icon iconId={"github"}/>
+                                </SocialLink>
+                            </SocialItem>
+                        </SocialList>
+                    git
                 </FlexWrapper>
                 <StyledForm>
                     <label htmlFor="name">Your name:</label>
@@ -27,7 +49,7 @@ export const Contact = () => {
                     <label htmlFor="project">Tell about the project:</label>
                     <input type={"text"} name={"project"}></input>
                     <FlexWrapper>
-                        <Button display={"flex"}>Send
+                        <Button type={"submit"} display={"flex"}>Send
                             <Icon iconId={"rightArrow"}/>
                         </Button>
 
@@ -48,3 +70,14 @@ const StyledContact = styled.section`
   background-color: crimson;
 `
 
+const SocialList = styled.ul`
+display: flex;
+  gap: 50px;
+  
+`
+const SocialItem = styled.li`
+
+`
+const SocialLink = styled.a`
+
+`
