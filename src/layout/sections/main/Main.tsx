@@ -9,7 +9,7 @@ export const Main = () => {
     return (
         <StyledMain>
             <Photo src={photo}/>
-            <FlexWrapper position={"absolute"} direction={"column"} zindex={"100"}>
+            <FlexWrapper position={"absolute"} direction={"column"} zindex={"2"}>
                 <Name>
                     Hello!
                     I’m Zarror Nibors
@@ -42,7 +42,7 @@ const StyledMain = styled.div`
   background-repeat: no-repeat;
   background-position: right;*/
   position: relative;
-  min-height: 743px;
+  height: 743px;
   background-color: darkgreen;
   display: flex;
   wrap: wrap;

@@ -39,5 +39,6 @@ export const Testimony = () => {
 const StyledTestimony = styled.section`
 `
 const Photo = styled.img`
-
+  width: 389px;
+  height: 391px;
 `
