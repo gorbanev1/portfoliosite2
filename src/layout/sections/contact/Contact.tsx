@@ -39,7 +39,6 @@ export const Contact = () => {
                                 </SocialLink>
                             </SocialItem>
                         </SocialList>
-                    git
                 </FlexWrapper>
                 <StyledForm>
                     <label htmlFor="name">Your name:</label>
