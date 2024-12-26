@@ -11,7 +11,6 @@ export const Contact = () => {
             <FlexWrapper>
                 <FlexWrapper direction={"column"}>
                     <Text>Let’s Connect</Text>
-
                         <SocialList>
                             <SocialItem>
                                 <SocialLink>

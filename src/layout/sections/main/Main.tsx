@@ -5,10 +5,13 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/Button";
 import {Text} from "../../../components/Text"
+import {Container} from "../../../components/Container";
 export const Main = () => {
     return (
         <StyledMain>
-            <Photo src={photo}/>
+
+            <Container  maxwidth={"1440px"} position={"relative"}>
+                <Photo src={photo}/>
             <FlexWrapper position={"absolute"} direction={"column"} zindex={"2"}>
                 <Name>
                     Hello!
@@ -33,6 +36,7 @@ export const Main = () => {
                     </FlexWrapper>
                 </FlexWrapper>
             </FlexWrapper>
+            </Container>
         </StyledMain>
     );
 };
@@ -41,7 +45,7 @@ const StyledMain = styled.div`
     /*background-image: ${photoUrl};
   background-repeat: no-repeat;
   background-position: right;*/
-  position: relative;
+  //position: relative;
   height: 743px;
   background-color: darkgreen;
   display: flex;

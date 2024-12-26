@@ -4,10 +4,12 @@ import {Icon} from '../../../components/icon/Icon';
 import styled from "styled-components";
 import {Text} from "../../../components/Text"
 import {Ability} from "./Ability";
+import {Container} from "../../../components/Container";
 
 export const Abilities = () => {
     return (
         <StyledAbilities>
+            <Container>
             <FlexWrapper align={"center"} wrap={"wrap"} >
 
                 <FlexWrapper direction={"column"}>
@@ -28,6 +30,7 @@ export const Abilities = () => {
                     </FlexWrapper>
                 </FlexWrapper>
             </FlexWrapper>
+            </Container>
         </StyledAbilities>
     );
 };

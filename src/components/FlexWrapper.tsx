@@ -29,4 +29,6 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   margin:  ${props=>props.margin||"unset"};
   padding: ${props=>props.padding||"unset"};
   width: ${props=>props.width||"unset"};
+  top: 175px;
+  left: 118px;
 `

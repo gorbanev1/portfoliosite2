@@ -1,6 +1,7 @@
 import {createGlobalStyle} from "styled-components";
 import {theme} from "./Theme";
 
+
 export const GlobalStyle = createGlobalStyle`
   *,
   *::before,
@@ -9,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-    
+
   body {
     margin: 0;
     font-family: "Playfair Display", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,21 +20,35 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${theme.colors.font};
   }
+
   a {
     text-decoration: unset;
   }
+
   ul {
     list-style: none;
   }
-  button{
+
+  button {
     background-color: unset;
     border: none;
   }
-  section:nth-of-type(odd){
-  background-color: ${theme.colors.primaryBg}
+
+  section:nth-of-type(odd) {
+    background-color: ${theme.colors.primaryBg}
   }
-  section:nth-of-type(even){
+
+  section:nth-of-type(even) {
     background-color: ${theme.colors.secondaryBg}
   }
+
+  input {
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: inherit;
+  }
+
 `
+
 
