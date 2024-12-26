@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FlexWrapper} from "../../../components/FlexWrapper";
-import {Text} from "../../../components/Text";
+import {FlexWrapper} from "../../components/FlexWrapper";
+import {Text} from "../../components/Text";
 
 
 export const Footer = () => {

@@ -24,10 +24,13 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledHeaderMenu = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ul {
     display: flex;
     gap: 30px;
-    justify-content: center;
+
   }
 `
 const Mask = styled.span`
@@ -37,7 +40,8 @@ const Mask = styled.span`
   display: inline-block;
   height: 50%;
   overflow-y: hidden;
-  outline: 1px solid red;
+  //outline: 1px solid red;
+  color: ${theme.colors.font};
 
   & + & {
     top: 50%;
@@ -50,13 +54,29 @@ const Mask = styled.span`
 `
 const ListItem = styled.li`
   position: relative;
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    background-color: ${theme.colors.accent};
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    right: -10px;
+    z-index: 1;
+    transform: scale(0)
+  }
 
   &:hover {
+    &::before{
+      transform: scale(1);
+    }
+    
     ${Mask} {
-      transform: skewX(12deg) translateX(5px);
-
+      transform: /*skewX(12deg)*/ translateX(1px);
+      color: ${theme.colors.accent};
       & + ${Mask} {
-        transform: skewX(-12deg) translateX(-5px);
+        transform: /*skewX(-12deg)*/ translateX(-1px);
       }
     }
 
@@ -68,5 +88,6 @@ const Link = styled.a`
   font-size: 20px;
   font-weight: 500;
   color: ${theme.colors.font};
+  color: transparent;
 
 `
