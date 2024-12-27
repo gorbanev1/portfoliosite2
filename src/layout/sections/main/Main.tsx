@@ -12,12 +12,12 @@ export const Main = () => {
 
             <Container  maxwidth={"1440px"} position={"relative"}>
                 <Photo src={photo}/>
-            <FlexWrapper position={"absolute"} direction={"column"} zindex={"2"}>
+            <FlexWrapper position={"absolute"} direction={"column"} zindex={"2"} top={"175px"} left={"118px"}>
                 <Name>
-                    Hello!
+                    Hello! <br/>
                     I’m Zarror Nibors
                 </Name>
-                <FlexWrapper maxwidth={"404px"} direction={"column"}>
+                <FlexWrapper maxwidth={"404px"} direction={"column"} height={"100px"}>
                     <MainTitle>
                         I’am freelance web developer based in Indonesia who loves to craft attractive design experiences
                         for the web.
@@ -59,10 +59,16 @@ const Photo = styled.img`
   right: 0;
 `
 const MainTitle = styled.h1`
-
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
 `
 const Name = styled.h2`
-
+  font-family: "Playfair Display", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
 `
 
 

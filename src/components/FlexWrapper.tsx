@@ -12,6 +12,9 @@ type FlexWrapperPropsType={
     margin?:string
     padding?: string
     width?: string
+    height?: string
+    top?: string
+    left?: string
 
 
 }
@@ -28,7 +31,8 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   gap: ${props=>props.gap||"unset" };
   margin:  ${props=>props.margin||"unset"};
   padding: ${props=>props.padding||"unset"};
-  width: ${props=>props.width||"unset"};
-  top: 175px;
-  left: 118px;
+  width: ${props=>props.width||"100%"};
+  top: ${props=>props.top||"0"};
+  left: ${props=>props.left||"0"};
+  height: ${props=>props.width||"100%"};
 `
