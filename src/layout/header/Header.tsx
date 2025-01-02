@@ -13,10 +13,10 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper justify={"space-between"}>
+                <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"}>
                 <Logo/>
                 <HeaderMenu menuItems={items}/>
-                <Button display={"block"} height={"50px"} width={"157px"}><Text>Contact Me</Text></Button>
+                <Button display={"block"} height={"50px"} width={"157px"} ><Text>Contact Me</Text></Button>
                 </FlexWrapper>
             </Container>
         </StyledHeader>

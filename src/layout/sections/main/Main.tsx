@@ -12,20 +12,20 @@ export const Main = () => {
 
             <Container  maxwidth={"1440px"} position={"relative"}>
                 <Photo src={photo}/>
-            <FlexWrapper position={"absolute"} direction={"column"} zindex={"2"} top={"175px"} left={"118px"}>
+            <FlexWrapper position={"absolute"} direction={"column"} zindex={"2"} top={"175px"} left={"118px"} maxwidth={"52%"}>
                 <Name>
                     Hello! <br/>
                     I’m Zarror Nibors
                 </Name>
-                <FlexWrapper maxwidth={"404px"} direction={"column"} height={"100px"}>
+                <FlexWrapper maxwidth={"404px"} direction={"column"} >
                     <MainTitle>
                         I’am freelance web developer based in Indonesia who loves to craft attractive design experiences
                         for the web.
                     </MainTitle>
-                    <FlexWrapper direction={"row"} margin={"0 auto"} padding={"50px 0"} width={"100%"}>
-                        <Button width={"50%"}>
+                    <FlexWrapper direction={"row"}  margin={"30px 0 0 0"} width={"100%"} height={"64px"}>
+                        <Button width={"50%"} height={"100%"}>
                             <Icon iconId={"email"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
-                            <Text padding={"20px 40px 20px 10px"}>Email me</Text>
+                            <Text padding={"20px 40px 20px 10px"} fontFamily={"Poppins"} fontSize={"20px"} fontWeight={"400"}>Email me</Text>
                         </Button>
                         <Link>
                             <Icon iconId={"cv"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
@@ -41,7 +41,7 @@ export const Main = () => {
     );
 };
 const photoUrl = `url( ${photo} )`
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     /*background-image: ${photoUrl};
   background-repeat: no-repeat;
   background-position: right;*/

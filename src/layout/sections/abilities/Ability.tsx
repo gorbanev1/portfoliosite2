@@ -22,7 +22,7 @@ export const Ability = (props:AbilityPropsType) => {
 const StyledAbility = styled.div`
   width: 288px;
   height: 295px;
-  background-color: brown;
+  background-color: #C4C4C4;
 
 `
 const IconWrapper = styled.div`

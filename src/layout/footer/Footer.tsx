@@ -8,7 +8,7 @@ export const Footer = () => {
     return (
         <StyledFooter>
                 <Text>Created by
-                    <Name>Zarror</Name>
+                    <Name> Zarror </Name>
                     | All Reserved!
                 </Text>
         </StyledFooter>
