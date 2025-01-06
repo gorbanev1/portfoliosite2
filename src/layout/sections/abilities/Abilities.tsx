@@ -20,9 +20,9 @@ export const Abilities = () => {
                     </div>
                 </FlexWrapper>
                 <FlexWrapper direction={"column"} align={"center"} margin={" 0 0 0 94px"}>
-                    <Text fontFamily={"Poppins"} fontSize={"40px"} fontWeight={"700"}>
+                    <h3>
                         Developer and Designer, specialized in <br/>UI/UX and Web Developer
-                    </Text>
+                    </h3>
                     <FlexWrapper gap={"15px"} wrap={"wrap"}>
                         <Ability iconId={"computer"} text={"Front End Developer"}/>
                         <Ability iconId={"paint"} text={"UI/UX Designer"}/>

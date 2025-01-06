@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FlexWrapper} from "../../components/FlexWrapper";
-import photoReview from '../../assets/images/reviewman.webp'
-import {Icon} from "../../components/icon/Icon";
-import {Text} from "../../components/Text";
+import {FlexWrapper} from "../../../components/FlexWrapper";
+import photoReview from '../../../assets/images/reviewman.webp'
+import {Icon} from "../../../components/icon/Icon";
+import {Text} from "../../../components/Text";
 
 export const Testimony = () => {
     return (

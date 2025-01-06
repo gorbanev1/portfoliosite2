@@ -4,7 +4,7 @@ import {Container} from '../../components/Container';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import {Logo} from "../../components/logo/Logo";
 import {HeaderMenu} from "./HeaderMenu/HeaderMenu";
-import {Button} from "../../components/Button";
+import {LinkButton} from "../../components/LinkButton";
 import {Text} from "../../components/Text";
 
 const items = ["Home", "About", "Services"]
@@ -16,7 +16,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"}>
                 <Logo/>
                 <HeaderMenu menuItems={items}/>
-                <Button display={"block"} height={"50px"} width={"157px"} ><Text>Contact Me</Text></Button>
+                <LinkButton display={"block"} height={"50px"} width={"157px"} ><Text>Contact Me</Text></LinkButton>
                 </FlexWrapper>
             </Container>
         </StyledHeader>

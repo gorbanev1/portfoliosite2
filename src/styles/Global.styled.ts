@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${theme.colors.font};
+    line-height: 1.8;
   }
 
   a {
@@ -47,6 +48,16 @@ export const GlobalStyle = createGlobalStyle`
     border-bottom: 1px solid white;
     background-color: transparent;
     color: inherit;
+  }
+  h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    
+  }
+  h1 span{
+    color: ${theme.colors.font};
   }
 
 `

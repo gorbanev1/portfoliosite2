@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Text} from "../../../components/Text";
 import {Icon} from "../../../components/icon/Icon";
-import {Button} from "../../../components/Button";
+import {LinkButton} from "../../../components/LinkButton";
 
 export const Contact = () => {
     return (
@@ -47,9 +47,9 @@ export const Contact = () => {
                     <label htmlFor="project">Tell about the project:</label>
                     <input type={"text"} name={"project"}></input>
                     <FlexWrapper>
-                        <Button type={"submit"} display={"flex"}>Send
+                        <LinkButton type={"submit"} display={"flex"}>Send
                             <Icon iconId={"rightArrow"}/>
-                        </Button>
+                        </LinkButton>
 
                     </FlexWrapper>
                 </StyledForm>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../styles/Theme";
 
 type TextPropsType = {
     padding?: string;
@@ -10,17 +11,23 @@ type TextPropsType = {
     color?: string
     width?: string
     height?: string
+    align?: string
+    justify?: string
+    gap?:string
 
 
 }
-export const Text = styled.text<TextPropsType>`
+export const Text = styled.p<TextPropsType>`
   padding: ${props => props.padding || "unset"};
   display: ${props => props.display || "unset"};
   margin: ${props => props.margin || "unset"};
   font-family: ${props => props.fontFamily || "unset"};
   font-size:  ${props => props.fontSize || "initial"};
   font-weight: ${props => props.fontWeight || "initial"};
-  color:  ${props => props.color || "inherit"};
-  width:  ${props => props.width || "inherit"};
+  color:  ${props => props.color || theme.colors.font};
+  width:  ${props => props.width || "unset"};
   height:  ${props => props.height || "inherit"};
+  align-items:  ${props => props.align || "unset"};
+  justify-content:  ${props => props.justify || "unset"};
+  gap:  ${props => props.gap || "unset"};
 `
