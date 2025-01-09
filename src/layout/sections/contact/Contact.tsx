@@ -5,6 +5,7 @@ import {Text} from "../../../components/Text";
 import {Icon} from "../../../components/icon/Icon";
 import {LinkButton} from "../../../components/LinkButton";
 import {Container} from "../../../components/Container";
+import {theme} from "../../../styles/Theme";
 
 const socials = ["group", "upwork", "youtube", "linkedin", "github",]
 
@@ -18,24 +19,24 @@ export const Contact = () => {
                         <SocialList>
                             {socials.map((s, index) => {
                                 return <SocialItem>
-                                    <SocialLink>
-                                        <Icon iconId={s}/>
+                                    <SocialLink href={"#"}>
+                                        <Icon width={"25px"} height={"25px"} viewBox={"0 0 25 25"} iconId={s}/>
                                     </SocialLink>
                                 </SocialItem>
                             })}
                         </SocialList>
                     </FlexWrapper>
                     <StyledForm>
-                        <label htmlFor="name"><Text fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"}> Your
+                        <label htmlFor="name"><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"} margin={"0 0 30px 0"}> Your
                             name:</Text></label>
                         <input type={"text"} name={"name"}></input>
-                        <label htmlFor="email">Your email address:</label>
+                        <label htmlFor="email"><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"} margin={"0 0 30px 0"}>Your email address:</Text></label>
                         <input type={"text"} name={"email"}></input>
-                        <label htmlFor="project">Tell about the project:</label>
-                        <input type={"text"} name={"project"}></input>
+                        <label htmlFor="project"><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"} margin={"0 0 30px 0"}>Tell about the project:</Text></label>
+                        <input type={"text"} name={"project"} ></input>
                         <FlexWrapper>
-                            <LinkButton type={"submit"} display={"flex"}>Send
-                                <Icon iconId={"rightArrow"}/>
+                            <LinkButton type={"submit"} display={"flex"} bgc={"transparent"}><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} margin={"0 40px 0 0 "} color={theme.colors.accent}>Send</Text>
+                                <Icon iconId={"rightArrow"} width={"28px"} height={"28px"}/>
                             </LinkButton>
 
                         </FlexWrapper>
@@ -49,11 +50,30 @@ export const Contact = () => {
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 330px;
+  width: 500px;
+  outline: 1px solid rgba(255, 0, 0, 0.47);
+  label {
+    display: block;
+   
+  }
+  input{
+    margin: 10px 0 30px 0 ;
+    font-size: 20px;
+  }
+  
+  input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: inherit;
+  }
+  
 `
 
 const StyledContact = styled.section`
   background-color: crimson;
+  padding: 100px 0 50px 0 ;
 `
 
 const SocialList = styled.ul`

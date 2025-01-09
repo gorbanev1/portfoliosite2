@@ -42,6 +42,10 @@ export const GlobalStyle = createGlobalStyle`
   section:nth-of-type(even) {
     background-color: ${theme.colors.secondaryBg}
   }
+  section:nth-last-of-type(2){
+    background-color: ${theme.colors.secondaryBg}
+
+  }
 
   input {
     border: none;

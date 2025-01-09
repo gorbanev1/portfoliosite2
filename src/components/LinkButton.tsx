@@ -8,6 +8,7 @@ type ButtonPropsType={
     display?: string
     bgc?: string
     gap?: string
+
 }
 
 export const LinkButton = styled.a<ButtonPropsType>`
@@ -16,9 +17,10 @@ export const LinkButton = styled.a<ButtonPropsType>`
   display: ${props => props.display||"flex"};
   align-items: center;
   justify-content: center;
+  text-align: center;
   width:  ${props => props.width||"unset"};
   height:  ${props => props.height||"unset"};
-  background-color: ${theme.colors.accent};
+  background-color: ${props=>props.bgc||theme.colors.accent};
   gap: ${props => props.gap||"unset"};
   
   

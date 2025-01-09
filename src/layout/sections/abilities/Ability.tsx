@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React from 'react';
 import {Icon} from "../../../components/icon/Icon";
 import {Text} from "../../../components/Text";
+import {theme} from "../../../styles/Theme";
 type AbilityPropsType = {
     iconId: string
     text:string
@@ -23,6 +24,10 @@ const StyledAbility = styled.div`
   width: 288px;
   height: 295px;
   background-color: #C4C4C4;
+  margin: 0 auto;
+  &:hover{
+    background-color: ${theme.colors.accent};
+  }
 
 `
 const IconWrapper = styled.div`

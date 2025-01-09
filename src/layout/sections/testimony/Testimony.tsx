@@ -30,8 +30,8 @@ export const Testimony = () => {
                 <FlexWrapper padding={"100px 0"} wrap={"wrap"}>
                     <Photo width={"390px"} height={"390px"} src={photoReview}/>
                     <FlexWrapper direction={"column"} margin={"0 108px   0 12px"} width={"490px"}>
-                        <Text fontSize={"100px"} fontWeight={"700"}>“</Text>
-                        <Text fontFamily={"Poppins"} fontSize={"20px"} fontWeight={"700"} lineHeight={"1.8"}>
+                        <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "}>“</Text>
+                        <Text fontFamily={"Poppins"} fontSize={"20px"} fontWeight={"700"} lineHeight={"1.8"} margin={"0 0 20px 0"}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
                             est
                             a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus,
@@ -66,6 +66,7 @@ export const Testimony = () => {
     );
 };
 const StyledTestimony = styled.section`
+  background: rgba(34, 42, 54, 0.95) !important;
 `
 const Photo = styled.img`
   width: 389px;
