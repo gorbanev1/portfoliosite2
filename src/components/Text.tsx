@@ -14,20 +14,22 @@ type TextPropsType = {
     align?: string
     justify?: string
     gap?:string
+    lineHeight?: string
 
 
 }
 export const Text = styled.p<TextPropsType>`
   padding: ${props => props.padding || "unset"};
-  display: ${props => props.display || "unset"};
+  display: ${props => props.display || "block"};
   margin: ${props => props.margin || "unset"};
   font-family: ${props => props.fontFamily || "unset"};
   font-size:  ${props => props.fontSize || "initial"};
   font-weight: ${props => props.fontWeight || "initial"};
   color:  ${props => props.color || theme.colors.font};
   width:  ${props => props.width || "unset"};
-  height:  ${props => props.height || "inherit"};
+  height:  ${props => props.height || "unset"};
   align-items:  ${props => props.align || "unset"};
   justify-content:  ${props => props.justify || "unset"};
   gap:  ${props => props.gap || "unset"};
+  line-height:  ${props => props.lineHeight || "initial"};
 `

@@ -6,6 +6,7 @@ import {Logo} from "../../components/logo/Logo";
 import {HeaderMenu} from "./HeaderMenu/HeaderMenu";
 import {LinkButton} from "../../components/LinkButton";
 import {Text} from "../../components/Text";
+import {theme} from "../../styles/Theme";
 
 const items = ["Home", "About", "Services"]
 
@@ -16,7 +17,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"}>
                 <Logo/>
                 <HeaderMenu menuItems={items}/>
-                <LinkButton display={"block"} height={"50px"} width={"157px"} ><Text>Contact Me</Text></LinkButton>
+                <LinkButton display={"flex"} height={"50px"} width={"157px"}><Text fontFamily={"Poppins, sans-serif"} fontWeight={"500"} fontSize={"20px"}> Contact Me</Text></LinkButton>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -24,10 +25,10 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  background-color: deeppink;
+  background-color: ${theme.colors.primaryBgO};
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
+  
   position: fixed;
   top: 10px;
   left: 0;
