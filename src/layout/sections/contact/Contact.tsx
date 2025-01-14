@@ -74,6 +74,7 @@ const StyledForm = styled.form`
 const StyledContact = styled.section`
   background-color: crimson;
   padding: 100px 0 50px 0 ;
+  display: flex;
 `
 
 const SocialList = styled.ul`

@@ -42,4 +42,5 @@ export const Abilities = () => {
 const StyledAbilities = styled.section`
   background-color: #222A36!important;
   padding: 100px;
+  display: flex;
 `

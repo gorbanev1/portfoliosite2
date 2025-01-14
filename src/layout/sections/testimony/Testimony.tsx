@@ -27,13 +27,7 @@ const arr = [
 const reviews = [
     {
         iconId: photoReview,
-        reviewText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum\n" +
-            "                            est\n" +
-            "                            a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus,\n" +
-            "                            ut\n" +
-            "                            interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.\n" +
-            "                            Class\n" +
-            "                            aptent taciti sociosqu ad litora torquent",
+        reviewText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent",
     },
     {
         iconId: photoReview2,
@@ -41,7 +35,7 @@ const reviews = [
     },
     {
         iconId: photoReview,
-        reviewText: " ываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываыв",
+        reviewText: "  ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываыв",
     }
 ]
 
@@ -58,8 +52,8 @@ export const Testimony = () => {
                             return <Photo width={"390px"} height={"390px"} src={review.iconId}/>
                         })}
                         {reviews.map((review, index) => {
-                            return <Text fontSize={"20px"} fontWeight={"700"} lineHeight={"1.8"}
-                                         margin={"35px 0 0 "}>{review.reviewText}</Text>
+                            return <Text fontFamily={"Poppins"} fontSize={"20px"} fontWeight={"700"} lineHeight={"1.8"}
+                                         margin={"0 0 20px 0"}>{review.reviewText}</Text>
                         })}
 
                         {/*                       <img src={photoReview}/>
@@ -87,7 +81,7 @@ export const Testimony = () => {
                         <Photo width={"390px"} height={"390px"} src={photoReview}/>*/}
                     </Carousel>
                     {/*<Photo width={"390px"} height={"390px"} src={photoReview}/>*/}
-                    <FlexWrapper direction={"column"} margin={"0 108px   0 12px"} width={"490px"}>
+                    {/*<FlexWrapper direction={"column"} margin={"0 108px   0 12px"} width={"490px"}>
                         <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "}>“</Text>
                         <Text fontFamily={"Poppins"} fontSize={"20px"} fontWeight={"700"} lineHeight={"1.8"}
                               margin={"0 0 20px 0"}>
@@ -106,7 +100,7 @@ export const Testimony = () => {
                                 <Icon iconId={"rightArrow"}/>
                             </button>
                         </FlexWrapper>
-                    </FlexWrapper>
+                    </FlexWrapper>*/}
                     <FlexWrapper direction={"column"} gap={"30px"} width={"194px"}>
                         {arr.map((i, index) => {
                             return <div key={index}>
@@ -228,10 +222,12 @@ export const Carousel = ({children}) => {
             width: "490px"
         }
     ]
-    return (/*<>
+    return (
+        /*<>
             {sliderPages.map((page, index) => {
 
-                return <>
+                return (/*<>
+                    {(index===1)&&<FlexWrapper direction={"column"}>
                     <MainContainer width={page.width}>
                         <WatchWindow>
                             <AllPagesContainer style={{
@@ -239,36 +235,42 @@ export const Carousel = ({children}) => {
                             }}>{page.pages}</AllPagesContainer>
                         </WatchWindow>
                     </MainContainer>
+                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "}>“</Text>
+                    }
                     {(index===1)&&<div>fsdDDDDDDDDDfsd</div>}
-                </>
+                </FlexWrapper>
 
             })}
         </>*/
-         <>
-             <MainContainer width={"390px"}>
-                 <WatchWindow>
-                     <AllPagesContainer style={{
-                         transform: `translateX(${offset}px)`
-                     }}>{pages}</AllPagesContainer>
-                 </WatchWindow>
-             </MainContainer>
-             <FlexWrapper direction={"column"}>
-             <MainContainer width={"490px"}>
-                 <WatchWindow>
-                     <AllDivsContainer style={{
-                         transform: `translateX(${offset2}px)`
-                     }}>{pages2}</AllDivsContainer>
-                 </WatchWindow>
-             </MainContainer >
-                 <FlexWrapper>
-             <button onClick={handleLeftArrowClick}>
-                 <Icon iconId={"leftArrow"}/></button>
-             <button onClick={handleRightArrowClick}>
-                 <Icon iconId={"rightArrow"}/>
-             </button>
-                 </FlexWrapper>
-             </FlexWrapper>
-         </>
+        <>
+            <MainContainer width={"390px"} height={"390px"}>
+                <WatchWindow>
+                    <AllPagesContainer style={{
+                        transform: `translateX(${offset}px)`
+                    }}>{pages}</AllPagesContainer>
+                </WatchWindow>
+            </MainContainer>
+            <FlexWrapper direction={"column"}>
+                <FlexWrapper direction={"column"} margin={"0 108px   0 12px"} width={"490px"}>
+                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "} color={"#C4C4C4"}>“</Text>
+                    <MainContainer width={"490px"}>
+                        <WatchWindow>
+                            <AllPagesContainer style={{
+                                transform: `translateX(${offset2}px)`
+                            }}>{pages2}</AllPagesContainer>
+                        </WatchWindow>
+                    </MainContainer>
+                    <FlexWrapper gap={"15px"} margin={"0 0 0 15px"}>
+                        <button onClick={handleLeftArrowClick}>
+                            <Icon iconId={"leftArrow"} width={"27px"} height={"24px"}/>
+                        </button>
+                        <button onClick={handleRightArrowClick}>
+                            <Icon iconId={"rightArrow"} width={"27px"} height={"24px"}/>
+                        </button>
+                    </FlexWrapper>
+                </FlexWrapper>
+            </FlexWrapper>
+        </>
     );
 };
 type MainContainerPropsType = {
@@ -277,26 +279,20 @@ type MainContainerPropsType = {
 }
 
 const MainContainer = styled.div<MainContainerPropsType>`
-  width: 390px;
-  height: 390px;
-`
-const MainContainer2 = styled.div`
-  width: 490px;
-
+  width: ${props => props.width} ;
+  height:  ${props => props.height|| "unset"};
 `
 const WatchWindow = styled.div`
   height: 100%;
   width: 100%;
   overflow: hidden;
 `
-
 const AllPagesContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
-`
-const AllDivsContainer = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: row;
+  transition: translate;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 `

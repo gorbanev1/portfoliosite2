@@ -24,6 +24,7 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
+  display: flex;
   background-color: aqua;
   text-align: center;
   
