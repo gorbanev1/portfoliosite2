@@ -14,7 +14,7 @@ export const Ability = (props:AbilityPropsType) => {
             <IconWrapper>
                 <Icon iconId={props.iconId} margin={"172px 0 0 30px"} width={"28px"} height={"28px"} viewBox={"0 0 28 28"}></Icon>
             </IconWrapper>
-            <Text display={"block"} margin={"0 0 0 30px"} fontWeight={"700"} fontFamily={"Poppins, sans-serif"}>{props.text}</Text>
+            <Text color={"inherit"} display={"block"} margin={"0 0 0 30px"} fontWeight={"700"} fontFamily={"Poppins, sans-serif"}>{props.text}</Text>
         </StyledAbility>
     );
 };
@@ -25,8 +25,10 @@ const StyledAbility = styled.div`
   height: 295px;
   background-color: #C4C4C4;
   margin: 0 auto;
+  color: ${theme.colors.icon};
   &:hover{
     background-color: ${theme.colors.accent};
+    color: ${theme.colors.font}
   }
 
 `

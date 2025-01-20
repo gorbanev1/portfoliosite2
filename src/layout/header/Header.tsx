@@ -14,7 +14,7 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"}>
+                <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"} color={theme.colors.font}>
                 <Logo/>
                 <HeaderMenu menuItems={items}/>
                 <LinkButton display={"flex"} height={"50px"} width={"157px"}><Text fontFamily={"Poppins, sans-serif"} fontWeight={"500"} fontSize={"20px"}> Contact Me</Text></LinkButton>
