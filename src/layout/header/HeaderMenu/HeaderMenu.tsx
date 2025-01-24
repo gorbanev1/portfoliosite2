@@ -30,7 +30,9 @@ const StyledHeaderMenu = styled.nav`
   ul {
     display: flex;
     gap: 30px;
-
+    media ${theme.media.tablet}{
+      display: none;
+    }
   }
 `
 const Mask = styled.span`
