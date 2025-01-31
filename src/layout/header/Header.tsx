@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Container} from '../../components/Container';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import {Logo} from "../../components/logo/Logo";
-import {HeaderMenu} from "./HeaderMenu/HeaderMenu";
+import {HeaderMenu} from "./headerMenu/HeaderMenu";
 import {LinkButton} from "../../components/LinkButton";
 import {Text} from "../../components/Text";
 import {theme} from "../../styles/Theme";
