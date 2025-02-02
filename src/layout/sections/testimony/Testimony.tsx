@@ -158,6 +158,8 @@ export const Carousel = ({children}) => {
     const [offset, setOffset] = useState(0)
     const [offset2, setOffset2] = useState(0)
 
+    const [arrowPos, setArrowPos] = useState(0)
+
 
     const handleLeftArrowClick = () => {
         setOffset((currentOffset) => {
@@ -168,6 +170,7 @@ export const Carousel = ({children}) => {
         setOffset2((currentOffset) => {
             const newOffset = currentOffset + PAGE2_WIDTH
             console.log(newOffset)
+            if (Math.min(newOffset, 0)==0) setArrowPos(0); else setArrowPos(1)
             return Math.min(newOffset, 0)
         })
     }
@@ -183,11 +186,18 @@ export const Carousel = ({children}) => {
             const newOffset = currentOffset - PAGE2_WIDTH
             const maxOffset = -(PAGE2_WIDTH * (pages2.length - 1))
             console.log(offset)
+            if (Math.max(newOffset, maxOffset)==maxOffset) setArrowPos(2); else setArrowPos(1)
             return Math.max(newOffset, maxOffset)
         })
 
     }
-
+    let opacityLeft=1;
+    let opacityRight=1;
+    switch (arrowPos){
+        case 0: {opacityLeft=0.5; opacityRight=1} break
+        case 1: {opacityLeft=1; opacityRight=1} break
+        case 2: {opacityLeft=1; opacityRight=0.5} break
+    }
     const filterElements = (pageWidth: number, elementType: string) => {
         return Children.map(children, (child) => {
             return cloneElement((child), {
@@ -281,12 +291,16 @@ export const Carousel = ({children}) => {
                         </WatchWindow>
                     </MainContainer>
                     <FlexWrapper gap={"15px"} margin={"0 0 0 15px"}>
-                        <button onClick={handleLeftArrowClick}>
+                        <ArrowButton onClick={handleLeftArrowClick} style={{
+                            opacity: opacityLeft
+                        }}>
                             <Icon iconId={"leftArrow"} width={"27px"} height={"24px"}/>
-                        </button>
-                        <button onClick={handleRightArrowClick}>
+                        </ArrowButton>
+                        <ArrowButton onClick={handleRightArrowClick} style={{
+                            opacity: opacityRight
+                        }}>
                             <Icon iconId={"rightArrow"} width={"27px"} height={"24px"}/>
-                        </button>
+                        </ArrowButton>
                     </FlexWrapper>
                 </ReviewText>
             </ReviewTextWrapper>
@@ -322,6 +336,7 @@ const AllPagesContainer = styled.div`
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
+  
 `
 
 const ReviewTextWrapper = styled.div`
@@ -348,4 +363,8 @@ const ReviewWrapper = styled.div`
   @media screen and (max-width: 901px){
     flex-wrap: wrap;
   }
+`
+const ArrowButton = styled.button`
+
+color: darkgreen;
 `
