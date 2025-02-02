@@ -30,7 +30,10 @@ const StyledAbility = styled.div`
     background-color: ${theme.colors.accent};
     color: ${theme.colors.font}
   }
-
+  @media screen and (max-width: 1093px){
+    max-width: 600px;
+  width: 100%;
+  }
 `
 const IconWrapper = styled.div`
   margin: 172px 0 0 30px;

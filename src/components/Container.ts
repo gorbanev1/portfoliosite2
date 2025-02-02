@@ -7,6 +7,7 @@ type containerPropsType = {
     maxwidth?: string;
 }
 export const Container = styled.div<containerPropsType>`
+  
   max-width: ${props => props.maxwidth || "1196px"};;
   width: ${props => props.width || "100%"};
   min-height: 100%;

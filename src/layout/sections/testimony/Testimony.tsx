@@ -9,7 +9,7 @@ import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
 
 
-const arr = [
+const pros = [
     {
         field: "Satisfaction\n" +
             "Clients",
@@ -45,7 +45,7 @@ export const Testimony = () => {
     return (
         <StyledTestimony>
             <Container>
-                <FlexWrapper padding={"100px 0"} wrap={"wrap"}>
+                <FlexWrapper padding={"100px 0"} wrap={"wrap"} margin={"0 auto"}>
 
                     <Carousel>
                         {reviews.map((review, index) => {
@@ -101,8 +101,8 @@ export const Testimony = () => {
                             </button>
                         </FlexWrapper>
                     </FlexWrapper>*/}
-                    <FlexWrapper direction={"column"} gap={"30px"} width={"194px"}>
-                        {arr.map((i, index) => {
+                    <ProsWrapper>
+                        {pros.map((i, index) => {
                             return <div key={index}>
                                 <Text fontSize={"30px"} fontWeight={"700"} lineHeight={"1.2"}>
                                     {i.field}
@@ -114,13 +114,33 @@ export const Testimony = () => {
                             </div>
                         })}
 
-                    </FlexWrapper>
+                    </ProsWrapper>
 
                 </FlexWrapper>
             </Container>
         </StyledTestimony>
     );
 };
+const ProsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 194px;
+  @media screen  and (max-width: 1193px){
+    max-width:100%;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @media screen  and (max-width: 901px){
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
 const StyledTestimony = styled.section`
   background: rgba(34, 42, 54, 0.95) !important;
 `
@@ -242,18 +262,18 @@ export const Carousel = ({children}) => {
 
             })}
         </>*/
-        <>
-            <MainContainer width={"390px"} height={"390px"}>
+        <ReviewWrapper>
+            <MainContainer maxWidth={"390px"} height={"390px"}>
                 <WatchWindow>
                     <AllPagesContainer style={{
                         transform: `translateX(${offset}px)`
                     }}>{pages}</AllPagesContainer>
                 </WatchWindow>
             </MainContainer>
-            <FlexWrapper direction={"column"}>
-                <FlexWrapper direction={"column"} margin={"0 108px   0 12px"} width={"490px"}>
+            <ReviewTextWrapper>
+                <ReviewText>
                     <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "} color={"#C4C4C4"}>“</Text>
-                    <MainContainer width={"490px"}>
+                    <MainContainer maxWidth={"490px"}>
                         <WatchWindow>
                             <AllPagesContainer style={{
                                 transform: `translateX(${offset2}px)`
@@ -268,19 +288,26 @@ export const Carousel = ({children}) => {
                             <Icon iconId={"rightArrow"} width={"27px"} height={"24px"}/>
                         </button>
                     </FlexWrapper>
-                </FlexWrapper>
-            </FlexWrapper>
-        </>
+                </ReviewText>
+            </ReviewTextWrapper>
+        </ReviewWrapper>
     );
 };
 type MainContainerPropsType = {
-    width: string
+    maxWidth: string
     height?: string
 }
 
 const MainContainer = styled.div<MainContainerPropsType>`
-  width: ${props => props.width} ;
+  max-width: ${props => props.maxWidth} ;
+  width: 100%;
   height:  ${props => props.height|| "unset"};
+  @media screen and (max-width: 1193px){
+    margin: 0 auto;
+  }
+  
+  
+  
 `
 const WatchWindow = styled.div`
   height: 100%;
@@ -295,4 +322,30 @@ const AllPagesContainer = styled.div`
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
+`
+
+const ReviewTextWrapper = styled.div`
+display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`
+const ReviewText = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 108px   0 12px;
+  max-width: 490px;
+  width: 100%;
+  @media screen and (max-width: 1193px){
+    margin: 0 10px   0 12px
+  }
+  
+  //direction={"column"} margin={"0 108px   0 12px"} width={"490px"}
+`
+const ReviewWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  @media screen and (max-width: 901px){
+    flex-wrap: wrap;
+  }
 `

@@ -7,6 +7,7 @@ import {HeaderMenu} from "./headerMenu/HeaderMenu";
 import {LinkButton} from "../../components/LinkButton";
 import {Text} from "../../components/Text";
 import {theme} from "../../styles/Theme";
+import {MobileMenu} from "./mobileMenu/MobileMenu";
 
 const items = ["Home", "About", "Services"]
 
@@ -18,6 +19,7 @@ export const Header = () => {
                 <Logo/>
                 <HeaderMenu menuItems={items}/>
                 <LinkButton display={"flex"} height={"50px"} width={"157px"}><Text fontFamily={"Poppins, sans-serif"} fontWeight={"500"} fontSize={"20px"}> Contact Me</Text></LinkButton>
+                <MobileMenu menuItems={items}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
