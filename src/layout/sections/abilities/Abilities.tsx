@@ -75,7 +75,7 @@ const AbilitiesSection = styled.div`
 `
 const StyledAbilities = styled.section`
   background-color: #222A36!important;
-  padding: 100px;
+  padding: 10px;
   display: flex;
 `
 const AbilityWrapper = styled.div`

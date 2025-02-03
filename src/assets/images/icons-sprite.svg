@@ -118,7 +118,7 @@
     <!--Testimony-->
     <g id="leftArrow">
         <path d="M28.3333 13L1.66667 13" stroke="#676CDB" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M13.3333 24.6667L1.66667 13L13.3333 1.33335" stroke="#676CDB" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.3333 24.6667L1.66667 13L13.3333 1.33335" stroke="#676CDB"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g id="rightArrow">
         <path d="M1.66666 13.0001H28.3333" stroke="#676CDB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

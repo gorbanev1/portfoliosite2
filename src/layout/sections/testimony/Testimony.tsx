@@ -148,8 +148,17 @@ const Photo = styled.img`
   width: 389px;
   height: 391px;
 `
-const PAGE1_WIDTH = 390
-const PAGE2_WIDTH = 490
+
+let PAGE1_WIDTH = 390
+let PAGE2_WIDTH = 490
+console.log(window.screen.width)
+if (window.screen.width<500) {
+    PAGE1_WIDTH = 335
+    PAGE2_WIDTH = 335
+    console.log(console.log(window.screen.width<500?490:335+"YYYYYYYYYYYYYYY"))
+}
+
+
 // @ts-ignore
 export const Carousel = ({children}) => {
     const [pages, setPages] = useState([])
@@ -191,12 +200,12 @@ export const Carousel = ({children}) => {
         })
 
     }
-    let opacityLeft=1;
+    let opacityLeft=0;
     let opacityRight=1;
     switch (arrowPos){
-        case 0: {opacityLeft=0.5; opacityRight=1} break
+        case 0: {opacityLeft=0.4; opacityRight=1} break
         case 1: {opacityLeft=1; opacityRight=1} break
-        case 2: {opacityLeft=1; opacityRight=0.5} break
+        case 2: {opacityLeft=1; opacityRight=0.4} break
     }
     const filterElements = (pageWidth: number, elementType: string) => {
         return Children.map(children, (child) => {
@@ -252,6 +261,11 @@ export const Carousel = ({children}) => {
             width: "490px"
         }
     ]
+    if (window.screen.width<500) {
+        PAGE1_WIDTH = 335
+        PAGE2_WIDTH = 335
+        console.log(window.screen.width<500&&PAGE2_WIDTH)
+    }
     return (
         /*<>
             {sliderPages.map((page, index) => {
@@ -273,7 +287,7 @@ export const Carousel = ({children}) => {
             })}
         </>*/
         <ReviewWrapper>
-            <MainContainer maxWidth={"390px"} height={"390px"}>
+            <MainContainer maxWidth={`${window.screen.width>500?390:335}px`} height={"390px"}>
                 <WatchWindow>
                     <AllPagesContainer style={{
                         transform: `translateX(${offset}px)`
@@ -283,7 +297,7 @@ export const Carousel = ({children}) => {
             <ReviewTextWrapper>
                 <ReviewText>
                     <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "} color={"#C4C4C4"}>“</Text>
-                    <MainContainer maxWidth={"490px"}>
+                    <MainContainer maxWidth={`${window.screen.width>500?490:335}px`}>
                         <WatchWindow>
                             <AllPagesContainer style={{
                                 transform: `translateX(${offset2}px)`
@@ -292,7 +306,7 @@ export const Carousel = ({children}) => {
                     </MainContainer>
                     <FlexWrapper gap={"15px"} margin={"0 0 0 15px"}>
                         <ArrowButton onClick={handleLeftArrowClick} style={{
-                            opacity: opacityLeft
+                            opacity: opacityLeft,
                         }}>
                             <Icon iconId={"leftArrow"} width={"27px"} height={"24px"}/>
                         </ArrowButton>
@@ -365,6 +379,6 @@ const ReviewWrapper = styled.div`
   }
 `
 const ArrowButton = styled.button`
-
+cursor: pointer;
 color: darkgreen;
 `
