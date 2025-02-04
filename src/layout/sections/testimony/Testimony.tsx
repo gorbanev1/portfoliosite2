@@ -45,7 +45,7 @@ export const Testimony = () => {
     return (
         <StyledTestimony>
             <Container>
-                <FlexWrapper padding={"100px 0"} wrap={"wrap"} margin={"0 auto"}>
+                <AllWrapper >
 
                     <Carousel>
                         {reviews.map((review, index) => {
@@ -102,21 +102,22 @@ export const Testimony = () => {
                         </FlexWrapper>
                     </FlexWrapper>*/}
                     <ProsWrapper>
+
                         {pros.map((i, index) => {
-                            return <div key={index}>
+                            return <ProWrapper key={index}>
                                 <Text fontSize={"30px"} fontWeight={"700"} lineHeight={"1.2"}>
                                     {i.field}
                                 </Text>
-                                <Text color={theme.colors.accent} fontSize={"50px"}
+                                <Text className={"value"} color={theme.colors.accent} fontSize={"50px"}
                                       fontWeight={"700"} lineHeight={"1.2"}>
                                     {i.value}
                                 </Text>
-                            </div>
+                            </ProWrapper>
                         })}
 
                     </ProsWrapper>
 
-                </FlexWrapper>
+                </AllWrapper>
             </Container>
         </StyledTestimony>
     );
@@ -126,18 +127,51 @@ const ProsWrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   width: 194px;
-  @media screen  and (max-width: 1193px){
+  @media screen  and (max-width: 1210px){
     max-width:100%;
     width: 100%;
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-evenly;
   }
+
   @media screen  and (max-width: 901px){
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+  }
+  @media screen  and (max-width: 841px){
+    max-width: 820px;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 700px;
+  
+  }
+
+  @media screen  and (max-width: 543px){
+    max-width:520px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0 0 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+`
+const ProWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media screen  and (max-width: 841px){
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    .value{
+      display: inline-block;
+      margin: -17px 0 0 0 ;
+    }
   }
 `
 
@@ -287,7 +321,7 @@ export const Carousel = ({children}) => {
             })}
         </>*/
         <ReviewWrapper>
-            <MainContainer maxWidth={`${window.screen.width>500?390:335}px`} height={"390px"}>
+            <MainContainer maxWidth={`${window.screen.width>500?390:335}px`} height={`${window.screen.width>500?390:335}px`}>
                 <WatchWindow>
                     <AllPagesContainer style={{
                         transform: `translateX(${offset}px)`
@@ -297,7 +331,7 @@ export const Carousel = ({children}) => {
             <ReviewTextWrapper>
                 <ReviewText>
                     <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "} color={"#C4C4C4"}>“</Text>
-                    <MainContainer maxWidth={`${window.screen.width>500?490:335}px`}>
+                    <MainContainer maxWidth={`${window.screen.width>500?490:335}px`} >
                         <WatchWindow>
                             <AllPagesContainer style={{
                                 transform: `translateX(${offset2}px)`
@@ -321,6 +355,18 @@ export const Carousel = ({children}) => {
         </ReviewWrapper>
     );
 };
+
+const AllWrapper = styled.div`
+  padding: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  @media screen and (max-width: 500px){
+    padding: 40px 0;
+  }
+  
+`
+
 type MainContainerPropsType = {
     maxWidth: string
     height?: string
@@ -331,6 +377,9 @@ const MainContainer = styled.div<MainContainerPropsType>`
   width: 100%;
   height:  ${props => props.height|| "unset"};
   @media screen and (max-width: 1193px){
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 500px){
     margin: 0 auto;
   }
   
