@@ -6,6 +6,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {LinkButton} from "../../../components/LinkButton";
 import {Text} from "../../../components/Text"
 import {Container} from "../../../components/Container";
+import {font} from "../../../styles/Common";
 
 
 export const Main = () => {
@@ -32,16 +33,16 @@ export const Main = () => {
             <Container maxwidth={"1440px"}>
                 <MainWrapper>
                    {/* <div style={{width: "400px",height: "400px"}}></div>*/}
-                    <Photo width={`${721 * (windowWidth / 1440)}px`} height={`${743 * (windowWidth / 1440)}px`}                           src={photo}/>
+                    <Photo width={`${721 * (Math.min(windowWidth,1440) / 1440)}px`} height={`${743 * (Math.min(windowWidth,1440) / 1440)}px`}                           src={photo}/>
                   {/*  <Photo width={"721px"} height={'743px'} src={photo}/>*/}
 
                      <MainTextWrapper>
-                        <MainText top={`${175 * (windowWidth / 1440)}px`} left={`${118 * (windowWidth / 1440)}px`} >
-                            <Name fontSize={`${90 * (windowWidth / 1440)}px`}>
+                        <MainText top={`${175 * (Math.min(windowWidth,1440) / 1440)}px`} left={`${118 * (Math.min(windowWidth,1440) / 1440)}px`} >
+                            <Name >
                                 Hello! <br/>
                                 I’m Zarror Nibors
                             </Name>
-                            <FlexWrapper width={"404px"} direction={"column"}>
+                            <FlexWrapper width={`${404 * (Math.min(windowWidth,960) / 960)}px`} direction={"column"}>
                                 <MainTitle fontSize={`${20*(windowWidth / 1440)}px`}>
                                     I’am freelance <span>web developer</span> based in Indonesia who loves to craft
                                     attractive design experiences
@@ -50,16 +51,13 @@ export const Main = () => {
                                 <FlexWrapper direction={"row"} margin={"30px 0 0 0"} width={"100%"} height={"64px"}>
                                     <LinkButton width={"50%"} height={"100%"} gap={"10px"}>
                                         <Icon iconId={"email"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
-                                        <Text display={"contents"} fontFamily={"Poppins"} fontSize={"20px"}
-                                              fontWeight={"400"}>Email me</Text>
+                                        <ButtonText>Email me</ButtonText>
                                     </LinkButton>
-                                    <Link href={"www.google.com"}>
-                                        <Text padding={"10px 20px"} fontFamily={"Poppins"} fontSize={"20px"}
-                                              fontWeight={"400"} display={"flex"} align={"center"} justify={"center"}
-                                              gap={"5px"}>
+                                    <Link href={"www.google.com"} width={`${721 * (Math.min(windowWidth,1440) / 1440)}px`}>
+                                        <ButtonText>
                                             <Icon iconId={"cv"} width={"20px"} height={"20px"} viewBox={"0 0 20 20"}/>
                                             <span> Download CV</span>
-                                        </Text>
+                                        </ButtonText>
                                     </Link>
                                 </FlexWrapper>
                             </FlexWrapper>
@@ -82,6 +80,11 @@ const StyledMain = styled.section`
   wrap: wrap;
   
 `
+const ButtonText = styled.p`
+   ${font({family: "Poppins", weight: 400, Fmin: 16, Fmax: 20})}
+  
+  
+`
 type mainTextPropsType = {
     top?: string
     left?: string
@@ -92,7 +95,7 @@ const MainText = styled.div<mainTextPropsType>`
   flex-direction: column;
   top: ${props => props.top};
   left: ${props => props.left};
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 960px) {
     position: static;
   }
   
@@ -116,8 +119,10 @@ const Photo = styled.img<photoPropsType>`
   height: ${props => props.height || "743px"};
   object-fit: cover;
   float: right;
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 960px) {
     float: none;
+    width: 100%;
+    aspect-ratio: 1;
   }
   @media screen and (max-width: 560px) {
     // width:   // props =>props.width*3};
@@ -135,7 +140,7 @@ const MainWrapper = styled.div`
 `
 const MainTextWrapper = styled.div`
   position: relative;
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: 960px) {
     position: static;
     
   }
@@ -145,27 +150,27 @@ type MainTitlePropsType = {
 
 }
 const MainTitle = styled.h1<MainTitlePropsType>`
-  color: rgba(255, 255, 255, 0.50);
-  font-family: Poppins;
-  font-size: ${props => props.fontSize||"20px"} ;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 180%;
+
+  ${font({family: "'Poppins', sans-serif", weight:400, Fmax: 20, Fmin: 16 , color: "#FFFFFF80", lineHeight: 1.8})};
+
+
 `
 
 type namePropsType = {
     fontSize?: string
 }
 
-const Name = styled.h2<namePropsType>`
-  font-family: "Playfair Display", sans-serif;
-  font-size: ${props => props.fontSize||"90px"};
-  font-weight: 700;
-  line-height: 1.2;
+const Name = styled.h2`
+  
+  
+ ${font({family: "'Playfair Display', sans-serif",weight:700, Fmax: 90, Fmin: 50 })};
+
 `
+type linkPropsType = {
+    width?: string
+}
 
-
-const Link = styled.a`
+const Link = styled.a<linkPropsType>`
   display: flex;
   align-items: center;
   justify-content: center;
