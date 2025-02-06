@@ -6,6 +6,8 @@ import {Icon} from "../../../components/icon/Icon";
 import {LinkButton} from "../../../components/LinkButton";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
+
 
 const socials = ["group", "upwork", "youtube", "linkedin", "github",]
 
@@ -15,7 +17,7 @@ export const Contact = () => {
             <Container>
                 <FlexWrapper gap={"256px"} wrap={"wrap"}>
                     <FlexWrapper direction={"column"} gap={"30px"}>
-                        <Text fontFamily={"Poppins"} fontSize={"100px"} lineHeight={"1.2"} fontWeight={"700"}>Let’s <br/> Connect</Text>
+                        <LetsConnect>Let’s <br/> Connect</LetsConnect>
                         <SocialList>
                             {socials.map((s, index) => {
                                 return <SocialItem>
@@ -27,12 +29,12 @@ export const Contact = () => {
                         </SocialList>
                     </FlexWrapper>
                     <StyledForm>
-                        <label htmlFor="name"><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"} margin={"0 0 30px 0"}> Your
-                            name:</Text></label>
+                        <label htmlFor="name"><FieldName > Your
+                            name:</FieldName></label>
                         <input type={"text"} name={"name"}></input>
-                        <label htmlFor="email"><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"} margin={"0 0 30px 0"}>Your email address:</Text></label>
+                        <label htmlFor="email"><FieldName >Your email address:</FieldName></label>
                         <input type={"text"} name={"email"}></input>
-                        <label htmlFor="project"><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} lineHeight={"1.2"} margin={"0 0 30px 0"}>Tell about the project:</Text></label>
+                        <label htmlFor="project"><FieldName >Tell about the project:</FieldName></label>
                         <input type={"text"} name={"project"} ></input>
                         <FlexWrapper>
                             <LinkButton type={"submit"} display={"flex"} bgc={"transparent"}><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} margin={"0 40px 0 0 "} color={theme.colors.accent}>Send</Text>
@@ -46,6 +48,16 @@ export const Contact = () => {
         </StyledContact>
     );
 };
+
+const LetsConnect = styled.p`
+  ${font({family: "Poppins, sans-serif", weight:700, Fmin:50, Fmax:100})}
+
+`
+
+const FieldName = styled.p`
+  ${font({family: "Poppins, sans-serif", weight:500, Fmin:22, Fmax:30})}
+  margin: "0 0 30px 0"
+`
 
 const StyledForm = styled.form`
   display: flex;
