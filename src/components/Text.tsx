@@ -15,6 +15,7 @@ type TextPropsType = {
     justify?: string
     gap?:string
     lineHeight?: string
+    whiteSpace?: string
 
 
 }
@@ -32,4 +33,5 @@ export const Text = styled.p<TextPropsType>`
   justify-content:  ${props => props.justify || "unset"};
   gap:  ${props => props.gap || "unset"};
   line-height:  ${props => props.lineHeight || "initial"};
+  white-space: ${props => props.whiteSpace ||"unset"};
 `

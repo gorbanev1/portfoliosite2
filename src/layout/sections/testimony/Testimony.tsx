@@ -105,11 +105,11 @@ export const Testimony = () => {
 
                         {pros.map((i, index) => {
                             return <ProWrapper key={index}>
-                                <Text fontSize={"30px"} fontWeight={"700"} lineHeight={"1.2"}>
+                                <Text fontSize={"30px"} fontWeight={"700"} lineHeight={"1.2"} width={"min-content"}>
                                     {i.field}
                                 </Text>
                                 <Text className={"value"} color={theme.colors.accent} fontSize={"50px"}
-                                      fontWeight={"700"} lineHeight={"1.2"}>
+                                      fontWeight={"700"} lineHeight={"1.2"} whiteSpace={"nowrap"}>
                                     {i.value}
                                 </Text>
                             </ProWrapper>

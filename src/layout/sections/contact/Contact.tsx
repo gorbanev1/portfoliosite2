@@ -15,8 +15,8 @@ export const Contact = () => {
     return (
         <StyledContact>
             <Container>
-                <FlexWrapper gap={"256px"} wrap={"wrap"}>
-                    <FlexWrapper direction={"column"} gap={"30px"}>
+                <FlexWrapper  wrap={"wrap"} justify={"space-between"}>
+                    <FlexWrapper  direction={"column"} gap={"30px"}>
                         <LetsConnect>Let’s <br/> Connect</LetsConnect>
                         <SocialList>
                             {socials.map((s, index) => {
@@ -40,7 +40,6 @@ export const Contact = () => {
                             <LinkButton type={"submit"} display={"flex"} bgc={"transparent"}><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} margin={"0 40px 0 0 "} color={theme.colors.accent}>Send</Text>
                                 <Icon iconId={"rightArrow"} width={"28px"} height={"28px"}/>
                             </LinkButton>
-
                         </FlexWrapper>
                     </StyledForm>
                 </FlexWrapper>
@@ -62,16 +61,22 @@ const FieldName = styled.p`
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
+  min-width: 200px;
+  width: 100%;
   outline: 1px solid rgba(255, 0, 0, 0.47);
   label {
     display: block;
-   
   }
   input{
     margin: 10px 0 30px 0 ;
     font-size: 20px;
   }
+  @media screen and (max-width: 900px){
+  
+    width: 350px;
+  
+}
   
   input:focus{
     border: none;
