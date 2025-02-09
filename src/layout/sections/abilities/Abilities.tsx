@@ -6,6 +6,7 @@ import {Text} from "../../../components/Text"
 import {Ability} from "./Ability";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
+import { font } from '../../../styles/Common';
 
 export const Abilities = () => {
     return (
@@ -54,10 +55,12 @@ const TextExperience = styled.p`
   font-family: Playfair Display, sans-serif;
   font-size: 40px;
   font-weight:700;
+  ${font({family:"Playfair Display, sans-serif", weight: 700, Fmin: 26, Fmax: 40, lineHeight: 1.8})};
   @media screen and (max-width: 1394px){
-    padding: 30px 0 0 20px ;
+    padding: 30px 0 0 60px ;
     max-width: fit-content;
     width: 100%;
+    
     
   }
 `
@@ -68,8 +71,15 @@ const AbilitiesSection = styled.div`
   justify-content: center;
   margin: 0 0 0 94px;
   @media screen and (max-width: 1394px){
-    
     margin: 0 auto;
+  }
+  h3{
+    padding-bottom: 20px;
+    ${font({family:'"Poppins", serif', weight: 700, Fmin: 24, Fmax: 40})};
+
+    @media screen and (max-width: 1394px){
+      padding: 58px 0 70px;
+    }
   }
   
 `
@@ -77,6 +87,7 @@ const StyledAbilities = styled.section`
   background-color: #222A36!important;
   padding: 10px;
   display: flex;
+  padding: 100px 0;
 `
 const AbilityWrapper = styled.div`
   display: flex;

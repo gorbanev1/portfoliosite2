@@ -15,9 +15,9 @@ export const Contact = () => {
     return (
         <StyledContact>
             <Container>
-                <FlexWrapper  wrap={"wrap"} justify={"space-between"}>
+                <ContactWrapper  >
                     <FlexWrapper  direction={"column"} gap={"30px"}>
-                        <LetsConnect>Let’s <br/> Connect</LetsConnect>
+                        <LetsConnect>Let’s Connect</LetsConnect>
                         <SocialList>
                             {socials.map((s, index) => {
                                 return <SocialItem>
@@ -42,15 +42,30 @@ export const Contact = () => {
                             </LinkButton>
                         </FlexWrapper>
                     </StyledForm>
-                </FlexWrapper>
+                </ContactWrapper>
             </Container>
         </StyledContact>
     );
 };
 
+const ContactWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  @media screen and (max-width:  700px){
+    justify-content: center;
+    gap: 85px;
+    flex-direction: column;
+  }
+  
+`
 const LetsConnect = styled.p`
-  ${font({family: "Poppins, sans-serif", weight:700, Fmin:50, Fmax:100})}
-
+  max-width: 438px;
+  ${font({family: "Poppins, sans-serif", weight:700, Fmin:50, Fmax:100})};
+  @media screen and (max-width: 700px){
+    max-width: 700px;
+}
 `
 
 const FieldName = styled.p`

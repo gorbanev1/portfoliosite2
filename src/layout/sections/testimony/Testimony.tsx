@@ -35,7 +35,7 @@ const reviews = [
     },
     {
         iconId: photoReview,
-        reviewText: "  ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываыв",
+        reviewText: "  ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываывываыва ыва ываыв авыа ыв аыва авыаыва ываыв",
     }
 ]
 
@@ -45,14 +45,15 @@ export const Testimony = () => {
     return (
         <StyledTestimony>
             <Container>
-                <AllWrapper >
+                <AllWrapper>
 
                     <Carousel>
                         {reviews.map((review, index) => {
                             return <Photo width={"390px"} height={"390px"} src={review.iconId}/>
                         })}
                         {reviews.map((review, index) => {
-                            return <Text fontFamily={"Poppins"} fontSize={"20px"} fontWeight={"700"} lineHeight={"1.8"}
+                            return <Text fontFamily={'"Poppins", sans-serif'} fontSize={"20px"} fontWeight={"700"}
+                                         lineHeight={"1.8"}
                                          margin={"0 0 20px 0"}>{review.reviewText}</Text>
                         })}
 
@@ -114,9 +115,7 @@ export const Testimony = () => {
                                 </Text>
                             </ProWrapper>
                         })}
-
                     </ProsWrapper>
-
                 </AllWrapper>
             </Container>
         </StyledTestimony>
@@ -127,34 +126,38 @@ const ProsWrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   width: 194px;
-  @media screen  and (max-width: 1210px){
-    max-width:100%;
+  @media screen  and (max-width: 1210px) {
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-evenly;
   }
+  
 
-  @media screen  and (max-width: 901px){
+  @media screen  and (max-width: 901px) {
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    padding: 70px 0 0 0px;
   }
-  @media screen  and (max-width: 841px){
-    max-width: 820px;
-    align-items: center;
+
+  @media screen  and (max-width: 841px) {
+    
+    align-items: baseline;
     margin: 0 auto;
     flex-direction: column;
     max-width: 700px;
-  
+    padding: 70px 0 0 0;
+
   }
 
-  @media screen  and (max-width: 543px){
-    max-width:520px;
+  @media screen  and (max-width: 550px) {
+    max-width: 520px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 0 0 50px;
+    padding: 20px 0 0 0;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
@@ -164,13 +167,13 @@ const ProsWrapper = styled.div`
 const ProWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media screen  and (max-width: 841px){
+  @media screen  and (max-width: 841px) {
     flex-direction: row;
     align-items: flex-start;
     gap: 30px;
-    .value{
+    .value {
       display: inline-block;
-      margin: -17px 0 0 0 ;
+      margin: -17px 0 0 0;
     }
   }
 `
@@ -186,10 +189,10 @@ const Photo = styled.img`
 let PAGE1_WIDTH = 390
 let PAGE2_WIDTH = 490
 console.log(window.screen.width)
-if (window.screen.width<500) {
+if (window.screen.width < 500) {
     PAGE1_WIDTH = 335
     PAGE2_WIDTH = 335
-    console.log(console.log(window.screen.width<500?490:335+"YYYYYYYYYYYYYYY"))
+    console.log(console.log(window.screen.width < 500 ? 490 : 335 + "YYYYYYYYYYYYYYY"))
 }
 
 
@@ -213,7 +216,7 @@ export const Carousel = ({children}) => {
         setOffset2((currentOffset) => {
             const newOffset = currentOffset + PAGE2_WIDTH
             console.log(newOffset)
-            if (Math.min(newOffset, 0)==0) setArrowPos(0); else setArrowPos(1)
+            if (Math.min(newOffset, 0) == 0) setArrowPos(0); else setArrowPos(1)
             return Math.min(newOffset, 0)
         })
     }
@@ -229,17 +232,29 @@ export const Carousel = ({children}) => {
             const newOffset = currentOffset - PAGE2_WIDTH
             const maxOffset = -(PAGE2_WIDTH * (pages2.length - 1))
             console.log(offset)
-            if (Math.max(newOffset, maxOffset)==maxOffset) setArrowPos(2); else setArrowPos(1)
+            if (Math.max(newOffset, maxOffset) == maxOffset) setArrowPos(2); else setArrowPos(1)
             return Math.max(newOffset, maxOffset)
         })
 
     }
-    let opacityLeft=0;
-    let opacityRight=1;
-    switch (arrowPos){
-        case 0: {opacityLeft=0.4; opacityRight=1} break
-        case 1: {opacityLeft=1; opacityRight=1} break
-        case 2: {opacityLeft=1; opacityRight=0.4} break
+    let opacityLeft = 0;
+    let opacityRight = 1;
+    switch (arrowPos) {
+        case 0: {
+            opacityLeft = 0.4;
+            opacityRight = 1
+        }
+            break
+        case 1: {
+            opacityLeft = 1;
+            opacityRight = 1
+        }
+            break
+        case 2: {
+            opacityLeft = 1;
+            opacityRight = 0.4
+        }
+            break
     }
     const filterElements = (pageWidth: number, elementType: string) => {
         return Children.map(children, (child) => {
@@ -295,10 +310,10 @@ export const Carousel = ({children}) => {
             width: "490px"
         }
     ]
-    if (window.screen.width<500) {
+    if (window.screen.width < 550) {
         PAGE1_WIDTH = 335
         PAGE2_WIDTH = 335
-        console.log(window.screen.width<500&&PAGE2_WIDTH)
+        console.log(window.screen.width < 500 && PAGE2_WIDTH)
     }
     return (
         /*<>
@@ -321,7 +336,8 @@ export const Carousel = ({children}) => {
             })}
         </>*/
         <ReviewWrapper>
-            <MainContainer maxWidth={`${window.screen.width>500?390:335}px`} height={`${window.screen.width>500?390:335}px`}>
+            <MainContainer maxWidth={`${window.screen.width > 550 ? 390 : 335}px`}
+                           height={`${window.screen.width > 550 ? 390 : 375}px`}>
                 <WatchWindow>
                     <AllPagesContainer style={{
                         transform: `translateX(${offset}px)`
@@ -330,8 +346,9 @@ export const Carousel = ({children}) => {
             </MainContainer>
             <ReviewTextWrapper>
                 <ReviewText>
-                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "} color={"#C4C4C4"}>“</Text>
-                    <MainContainer maxWidth={`${window.screen.width>500?490:335}px`} >
+                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "}
+                          color={"#C4C4C4"}>“</Text>
+                    <MainContainer maxWidth={`${window.screen.width > 550 ? 490 : 335}px`}>
                         <WatchWindow>
                             <AllPagesContainer style={{
                                 transform: `translateX(${offset2}px)`
@@ -361,10 +378,14 @@ const AllWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  @media screen and (max-width: 500px){
+  
+  @media screen and (max-width: 901px) {
+    width: min-content;
+  }
+  @media screen and (max-width: 500px) {
     padding: 40px 0;
   }
-  
+
 `
 
 type MainContainerPropsType = {
@@ -373,18 +394,15 @@ type MainContainerPropsType = {
 }
 
 const MainContainer = styled.div<MainContainerPropsType>`
-  max-width: ${props => props.maxWidth} ;
+  max-width: ${props => props.maxWidth};
   width: 100%;
-  height:  ${props => props.height|| "unset"};
-  @media screen and (max-width: 1193px){
-    margin: 0 auto;
+  height: ${props => props.height || "unset"};
+  @media screen and (max-width: 1193px) {
+    //margin: 0 auto;
   }
-  @media screen and (max-width: 500px){
-    margin: 0 auto;
+  @media screen and (max-width: 500px) {
+    //margin: 0 auto;
   }
-  
-  
-  
 `
 const WatchWindow = styled.div`
   height: 100%;
@@ -399,35 +417,40 @@ const AllPagesContainer = styled.div`
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
-  
+
 `
 
 const ReviewTextWrapper = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  //margin: 0 auto;
+
 `
 const ReviewText = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 108px   0 12px;
+  margin: 0 108px 0 12px;
   max-width: 490px;
   width: 100%;
-  @media screen and (max-width: 1193px){
-    margin: 0 10px   0 12px
+  @media screen and (max-width: 1193px) {
+    margin: 0 10px 0 12px
   }
-  
+  @media screen and (max-width: 901px) {
+    margin: 0;
+  }
+
   //direction={"column"} margin={"0 108px   0 12px"} width={"490px"}
 `
 const ReviewWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   margin: 0 auto;
-  @media screen and (max-width: 901px){
+  @media screen and (max-width: 901px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
 `
 const ArrowButton = styled.button`
-cursor: pointer;
-color: darkgreen;
+  cursor: pointer;
+  color: darkgreen;
 `

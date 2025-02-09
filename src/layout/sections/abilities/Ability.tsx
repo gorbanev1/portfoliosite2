@@ -32,9 +32,15 @@ const StyledAbility = styled.div`
   }
   @media screen and (max-width: 1093px){
     max-width: 600px;
-  width: 100%;
+    width: 100%;
+  }
+  @media screen and (max-width: 600px){
+    height: 176px;
   }
 `
 const IconWrapper = styled.div`
   margin: 172px 0 0 30px;
+  @media screen and (max-width: 600px){
+    margin: 44px 0 0 30px;
+  }
 `

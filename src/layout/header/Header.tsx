@@ -14,7 +14,7 @@ const items = ["Home", "About", "Services"]
 export const Header = () => {
     return (
         <StyledHeader>
-            <Container>
+            <Container maxwidth={"1440px"}>
                 <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"} color={theme.colors.font}>
                 <Logo/>
                 <HeaderMenu menuItems={items}/>
@@ -30,11 +30,12 @@ const StyledHeader = styled.header`
   background-color: ${theme.colors.primaryBgO};
   display: flex;
   justify-content: space-between;
-  
+  max-width: 1440px;
   position: fixed;
   top: 10px;
   left: 0;
   right: 0;
   z-index: 3;
+  margin: 0 auto;
   //margin: 10px 0;
 `

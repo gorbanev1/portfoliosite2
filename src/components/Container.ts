@@ -5,6 +5,7 @@ type containerPropsType = {
     position?: string;
     width?: string;
     maxwidth?: string;
+    padding?: string;
 }
 export const Container = styled.div<containerPropsType>`
   
@@ -15,4 +16,7 @@ export const Container = styled.div<containerPropsType>`
   outline: 1px solid rgba(255, 0, 0, 0.43);
   position: ${props => props.position || "static"};
   color: ${theme.colors.font};
+  @media screen and (max-width: 600px){
+    padding: ${props => props.padding||"0  20px 0"};
+  }
 `
