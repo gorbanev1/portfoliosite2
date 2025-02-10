@@ -53,17 +53,23 @@ const ContactWrapper = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  @media screen and (max-width:  700px){
+  outline: 1px dashed rgba(229, 16, 229, 0.68);
+  @media screen and (max-width: 960px) {
     justify-content: center;
     gap: 85px;
     flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    form{
+      max-width: 100%;
+    }
   }
-  
+
 `
 const LetsConnect = styled.p`
   max-width: 438px;
   ${font({family: "Poppins, sans-serif", weight:700, Fmin:50, Fmax:100})};
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 960px){
     max-width: 700px;
 }
 `
@@ -89,7 +95,7 @@ const StyledForm = styled.form`
   }
   @media screen and (max-width: 900px){
   
-    width: 350px;
+    width: 100%;
   
 }
   

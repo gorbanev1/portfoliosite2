@@ -75,7 +75,7 @@ const AbilitiesSection = styled.div`
   }
   h3{
     padding-bottom: 20px;
-    ${font({family:'"Poppins", serif', weight: 700, Fmin: 24, Fmax: 40})};
+    ${font({family:'"Poppins", serif', weight: 700, Fmin: 24, Fmax: 40, lineHeight:1.8})};
 
     @media screen and (max-width: 1394px){
       padding: 58px 0 70px;
