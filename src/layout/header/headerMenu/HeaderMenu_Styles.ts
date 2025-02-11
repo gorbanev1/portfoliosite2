@@ -1,24 +1,5 @@
-import React from 'react';
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
-
-export const Menu:React.FC<{ menuItems: Array<string>}> = (props: { menuItems: Array<string> }) => {
-    return (
-        <ul>
-            {props.menuItems.map((item, index) => {
-                return (
-                    <ListItem key={index}>
-                        <Link href="">
-                            {item}
-                            <Mask><span>{item}</span></Mask>
-                            <Mask><span>{item}</span></Mask>
-                        </Link>
-                    </ListItem>
-                )
-            })}
-        </ul>
-    );
-};
 
 const Mask = styled.span`
   position: absolute;
@@ -39,7 +20,7 @@ const Mask = styled.span`
     }
   }
 `
-const ListItem = styled.li`
+const MenuItem = styled.li`
   position: relative;
 
   &::before {
@@ -80,3 +61,9 @@ const Link = styled.a`
   color: transparent;
 
 `
+
+export const S={
+    Link,
+    MenuItem,
+    Mask
+}
