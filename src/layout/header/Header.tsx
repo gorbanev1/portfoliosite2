@@ -34,7 +34,6 @@ export const Header:React.FC = () => {
                             fontFamily={"Poppins, sans-serif"} fontWeight={"500"} fontSize={"20px"}> Contact
                             Me</Text></LinkButton>
                     </FlexWrapper>
-
                 </S.HeaderWrapper>
             </Container>
         </S.Header>
