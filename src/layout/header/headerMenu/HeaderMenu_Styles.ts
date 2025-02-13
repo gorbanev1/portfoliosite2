@@ -78,8 +78,8 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   background-color: rgba(16, 2, 2, 0.89);
 
   ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: none;
-    //display: flex;
+   
+   display: flex;
     justify-content: center;
     align-items: center;
   `}

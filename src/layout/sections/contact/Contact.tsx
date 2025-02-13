@@ -7,122 +7,45 @@ import {LinkButton} from "../../../components/LinkButton";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
 import {font} from "../../../styles/Common";
+import { S } from './Contact_Styles';
 
 
 const socials = ["group", "upwork", "youtube", "linkedin", "github",]
 
 export const Contact = () => {
     return (
-        <StyledContact>
+        <S.StyledContact>
             <Container>
-                <ContactWrapper  >
+                <S.ContactWrapper  >
                     <FlexWrapper  direction={"column"} gap={"30px"}>
-                        <LetsConnect>Let’s Connect</LetsConnect>
-                        <SocialList>
+                        <S.LetsConnect>Let’s Connect</S.LetsConnect>
+                        <S.SocialList>
                             {socials.map((s, index) => {
-                                return <SocialItem>
-                                    <SocialLink href={"#"}>
+                                return <S.SocialItem>
+                                    <S.SocialLink href={"#"}>
                                         <Icon width={"25px"} height={"25px"} viewBox={"0 0 25 25"} iconId={s}/>
-                                    </SocialLink>
-                                </SocialItem>
+                                    </S.SocialLink>
+                                </S.SocialItem>
                             })}
-                        </SocialList>
+                        </S.SocialList>
                     </FlexWrapper>
-                    <StyledForm>
-                        <label htmlFor="name"><FieldName > Your
-                            name:</FieldName></label>
+                    <S.StyledForm>
+                        <label htmlFor="name"><S.FieldName > Your
+                            name:</S.FieldName></label>
                         <input type={"text"} name={"name"}></input>
-                        <label htmlFor="email"><FieldName >Your email address:</FieldName></label>
+                        <label htmlFor="email"><S.FieldName >Your email address:</S.FieldName></label>
                         <input type={"text"} name={"email"}></input>
-                        <label htmlFor="project"><FieldName >Tell about the project:</FieldName></label>
+                        <label htmlFor="project"><S.FieldName >Tell about the project:</S.FieldName></label>
                         <input type={"text"} name={"project"} ></input>
                         <FlexWrapper>
                             <LinkButton type={"submit"} display={"flex"} bgc={"transparent"}><Text fontFamily={"Poppins, sans-serif"} fontSize={"30px"} fontWeight={"500"} margin={"0 40px 0 0 "} color={theme.colors.accent}>Send</Text>
                                 <Icon iconId={"rightArrow"} width={"28px"} height={"28px"}/>
                             </LinkButton>
                         </FlexWrapper>
-                    </StyledForm>
-                </ContactWrapper>
+                    </S.StyledForm>
+                </S.ContactWrapper>
             </Container>
-        </StyledContact>
+        </S.StyledContact>
     );
 };
 
-const ContactWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  outline: 1px dashed rgba(229, 16, 229, 0.68);
-  @media screen and (max-width: 960px) {
-    justify-content: center;
-    gap: 85px;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-    form{
-      max-width: 100%;
-    }
-  }
-
-`
-const LetsConnect = styled.p`
-  max-width: 438px;
-  ${font({family: "Poppins, sans-serif", weight:700, Fmin:50, Fmax:100})};
-  @media screen and (max-width: 960px){
-    max-width: 700px;
-}
-`
-
-const FieldName = styled.p`
-  ${font({family: "Poppins, sans-serif", weight:500, Fmin:22, Fmax:30})}
-  margin: "0 0 30px 0"
-`
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  min-width: 200px;
-  width: 100%;
-  outline: 1px solid rgba(255, 0, 0, 0.47);
-  label {
-    display: block;
-  }
-  input{
-    margin: 10px 0 30px 0 ;
-    font-size: 20px;
-  }
-  @media screen and (max-width: 900px){
-  
-    width: 100%;
-  
-}
-  
-  input:focus{
-    border: none;
-    outline: none;
-    border-bottom: 2px solid white;
-    background-color: transparent;
-    color: inherit;
-  }
-  
-`
-
-const StyledContact = styled.section`
-  background-color: crimson;
-  padding: 100px 0 50px 0 ;
-  display: flex;
-`
-
-const SocialList = styled.ul`
-  display: flex;
-  gap: 50px;
-
-`
-const SocialItem = styled.li`
-
-`
-const SocialLink = styled.a`
-
-`
