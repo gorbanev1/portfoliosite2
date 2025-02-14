@@ -92,22 +92,24 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
   position: fixed;
-  top: -100px;
-  right: -100px;
-  width: 200px;
-  height: 200px;
+  top: 34px;
+  right: 18px;
+  width: 60px;
+  height: 60px;
   z-index: 44;
-  background-color: red;
+  background-color: #2D3540;
+  border-radius: 10px;
 
 
   span {
     display: block;
-    width: 36px;
-    height: 2px;
+    width: 34px;
+    height: 4px;
+    border-radius: 4px;
     background-color: ${theme.colors.font};
     position: absolute;
-    left: 40px;
-    bottom: 50px;
+    left: 11px;
+    bottom: 37px;;
     z-index: 100;
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
@@ -116,8 +118,9 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     &::before {
       content: "";
       display: block;
-      width: 36px;
-      height: 2px;
+      width: 34px;
+      height: 4px;
+      border-radius: 4px;
       background-color: ${theme.colors.font};
       position: absolute;
       transform: translateY(-10px);
@@ -130,8 +133,9 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     &::after {
       content: "";
       display: block;
-      width: 36px;
-      height: 2px;
+      width: 34px;
+      height: 4px;
+      border-radius: 4px;
       background-color: ${theme.colors.font};
       position: absolute;
       transform: translateY(10px);
@@ -220,6 +224,22 @@ const Link = styled.a`
 */
 
 
+const HeaderWrapper = styled.div`
+
+`
+
+const Header = styled.header`
+  background-color: ${theme.colors.primaryBgO};
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  margin: 0 auto;
+`
 
 export const S={
     Link,
@@ -228,5 +248,7 @@ export const S={
     MobileMenu,
     MobileMenuPopup,
     BurgerButton,
-    DesktopMenu
+    DesktopMenu,
+    HeaderWrapper,
+    Header
 }

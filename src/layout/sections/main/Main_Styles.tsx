@@ -22,6 +22,7 @@ const StyledMain = styled.section`
   
   
 `
+
 const ButtonText = styled.p`
    ${font({family: "Poppins", weight: 400, Fmin: 16, Fmax: 20})};
 
@@ -71,8 +72,10 @@ const Photo = styled.img<photoPropsType>`
     // width:   // props =>props.width*3};
     //
     // height: {props =>(Number(props.height)*2).toString()};
-    max-width: 500px;
-    max-height: 502px;
+    min-width: 375px;
+    min-height: 450px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
   }
 `
@@ -86,7 +89,7 @@ const MainTextWrapper = styled.div`
   padding-bottom: 70px;
   @media screen and (max-width: 960px) {
     position: static;
-    padding-top: 0;
+    padding-top: 50px;
     padding-left: 20px;
     
     
@@ -104,6 +107,9 @@ const MainTitle = styled.h1<MainTitlePropsType>`
   @media screen and (min-width: 1440px){
     font-size: 20px;
   }
+  @media screen and (max-width: 960px){
+    padding-top: 30px;
+  }
 
 `
 
@@ -119,15 +125,17 @@ const Name = styled.h2`
     font-size: 90px;
   }
 `
-type linkPropsType = {
-    width?: string
-}
 
+type linkPropsType={
+    width:string,
+    height:string
+}
 const Link = styled.a<linkPropsType>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 201px;
+  padding-left: 20px;
 
   color: #FFF;
   line-height: 1.2;
@@ -136,6 +144,8 @@ const Link = styled.a<linkPropsType>`
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
+  width: ${props=>props.width};
+  height: ${props=>props.height};
 `
 export const S= {
     Link,

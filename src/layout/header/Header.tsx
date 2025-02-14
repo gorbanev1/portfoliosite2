@@ -21,23 +21,12 @@ export const Header:React.FC = () => {
 
          return () => window.removeEventListener("resize", handleWindowResize);
     }, []);
-    return (
-        <S.Header>
-            <Container maxwidth={"1440px"}>
-                <S.HeaderWrapper>
-                    <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"} color={theme.colors.font}>
-                        <Logo/>
+    return (<div>
                         {width< breakpoint ? <MobileMenu menuItems={items}/>
                                             :<DesktopMenu menuItems={items}/>}
+        </div>
+        )
 
-                        <LinkButton display={"flex"} height={"50px"} width={"157px"}><Text
-                            fontFamily={"Poppins, sans-serif"} fontWeight={"500"} fontSize={"20px"}> Contact
-                            Me</Text></LinkButton>
-                    </FlexWrapper>
-                </S.HeaderWrapper>
-            </Container>
-        </S.Header>
-    );
 };
 
 
