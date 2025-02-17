@@ -21,10 +21,10 @@ export const Header:React.FC = () => {
 
          return () => window.removeEventListener("resize", handleWindowResize);
     }, []);
-    return (<div>
+    return (<>
                         {width< breakpoint ? <MobileMenu menuItems={items}/>
                                             :<DesktopMenu menuItems={items}/>}
-        </div>
+        </>
         )
 
 };

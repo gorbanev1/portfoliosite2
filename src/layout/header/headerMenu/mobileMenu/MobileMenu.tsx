@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { LinkButton } from '../../../../components/LinkButton';
 import { S } from '../HeaderMenu_Styles';
 import {Menu} from "../menu/Menu";
 
@@ -14,6 +15,7 @@ export const MobileMenu:React.FC<{ menuItems: Array<string> }> = (props: { menuI
             </S.BurgerButton>
             <S.MobileMenuPopup isOpen={menuIsOpen} onClick={()=>setMenuIsOpen(false) }>
             <Menu menuItems={props.menuItems}/>
+                <LinkButton width={"157px"} height={"50px"} margin={"171px 0 0 0 "}>Contact me</LinkButton>
             </S.MobileMenuPopup>
         </S.MobileMenu>
     );

@@ -103,7 +103,7 @@ type MainTitlePropsType = {
 const MainTitle = styled.h1<MainTitlePropsType>`
 
   ${font({family: "'Poppins', sans-serif", weight:400, Fmax: 20, Fmin: 16 , color: "#FFFFFF80", lineHeight: 1.8})};
-
+  padding: 10px 0 0 0;
   @media screen and (min-width: 1440px){
     font-size: 20px;
   }
@@ -135,11 +135,8 @@ const Link = styled.a<linkPropsType>`
   align-items: center;
   justify-content: center;
   width: 201px;
-  padding-left: 20px;
-
   color: #FFF;
   line-height: 1.2;
-
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;

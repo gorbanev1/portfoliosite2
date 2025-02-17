@@ -80,12 +80,13 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   ${props => props.isOpen && css<{ isOpen: boolean }>`
    
    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   `}
   ul {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     flex-direction: column;
     align-items: center;
   }
@@ -108,8 +109,8 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     border-radius: 4px;
     background-color: ${theme.colors.font};
     position: absolute;
-    left: 11px;
-    bottom: 37px;;
+    left: 14px;
+    bottom: 30px;
     z-index: 100;
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
@@ -151,10 +152,10 @@ const DesktopMenu = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  padding: 0px 0 0 30px;
   ul {
     display: flex;
-    gap: 30px;
+    gap: 40px;
 
   }
 
@@ -225,16 +226,20 @@ const Link = styled.a`
 
 
 const HeaderWrapper = styled.div`
-
+  max-width: 1193px;
+  width: 90%;
+  margin: 0 auto;
+  outline: 2px solid rgb(43, 236, 14);
 `
 
 const Header = styled.header`
-  background-color: ${theme.colors.primaryBgO};
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   max-width: 1440px;
+  width: 100%;
   position: fixed;
-  top: 10px;
+  top: 17px;
   left: 0;
   right: 0;
   z-index: 3;

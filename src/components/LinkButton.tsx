@@ -7,7 +7,10 @@ type ButtonPropsType={
     height?: string
     display?: string
     bgc?: string
+    position?: string
+    margin?: string
     gap?: string
+
 
 }
 
@@ -21,8 +24,7 @@ export const LinkButton = styled.a<ButtonPropsType>`
   width:  ${props => props.width||"unset"};
   height:  ${props => props.height||"unset"};
   background-color: ${props=>props.bgc||theme.colors.accent};
-  gap: ${props => props.gap||"unset"};
-  
-  
+  margin: ${props=>props.margin||"unset"};
+  gap: ${props=>props.gap||"unset"};;
 `
 

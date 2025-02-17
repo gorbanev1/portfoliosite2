@@ -16,6 +16,7 @@ type TextPropsType = {
     gap?:string
     lineHeight?: string
     whiteSpace?: string
+    letterSpacing?: string
 
 
 }
@@ -34,4 +35,5 @@ export const Text = styled.p<TextPropsType>`
   gap:  ${props => props.gap || "unset"};
   line-height:  ${props => props.lineHeight || "initial"};
   white-space: ${props => props.whiteSpace ||"unset"};
+  letter-spacing:  ${props => props.letterSpacing ||"unset"};;
 `

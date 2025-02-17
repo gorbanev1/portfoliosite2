@@ -13,9 +13,10 @@ export const Abilities = () => {
         <S.StyledAbilities>
             <Container>
                 <FlexWrapper align={"center"} wrap={"wrap"} justify={"center"} >
-                    <FlexWrapper direction={"column"} margin={"0 auto"} align={"center"} justify={"center"}>
+                    <FlexWrapper direction={"column"} margin={"0 auto"} align={"center"} justify={"center"} padding={"0px 0 40px 1px"}>
                         <S.Experience>
-                            <Text color={theme.colors.accent} fontFamily={"Playfair Display, sans-serif"}
+                            <Text padding={"0 0 0 7px"}
+                                letterSpacing={"25px"} color={theme.colors.accent} fontFamily={"Playfair Display, sans-serif"}
                                   fontWeight={"700"} fontSize={"100px"}>4+</Text>
                             <br/>
                             <S.TextExperience >

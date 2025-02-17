@@ -13,7 +13,7 @@ import {Container} from "../../../../components/Container";
 export const DesktopMenu: React.FC<{ menuItems: Array<string> }> = (props: { menuItems: Array<string> }) => {
     return (
         <S.Header>
-            <Container maxwidth={"1440px"}>
+
                 <S.HeaderWrapper>
                     <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"} color={theme.colors.font}>
                         <Logo/>
@@ -25,7 +25,7 @@ export const DesktopMenu: React.FC<{ menuItems: Array<string> }> = (props: { men
                             Me</Text></LinkButton>
                     </FlexWrapper>
                 </S.HeaderWrapper>
-            </Container>
+
         </S.Header>
 
     );
