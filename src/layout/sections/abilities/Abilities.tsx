@@ -11,11 +11,11 @@ import { S } from './Abilities_Styles';
 export const Abilities = () => {
     return (
         <S.StyledAbilities>
-            <Container>
+            <Container padding={"0 0 0 0px"}>
                 <FlexWrapper align={"center"} wrap={"wrap"} justify={"center"} >
-                    <FlexWrapper direction={"column"} margin={"0 auto"} align={"center"} justify={"center"} padding={"0px 0 40px 1px"}>
+                    <FlexWrapper direction={"column"} margin={"0 auto"} align={"center"} justify={"center"} padding={"0px 0 40px 0px"}>
                         <S.Experience>
-                            <Text padding={"0 0 0 7px"}
+                            <Text
                                 letterSpacing={"25px"} color={theme.colors.accent} fontFamily={"Playfair Display, sans-serif"}
                                   fontWeight={"700"} fontSize={"100px"}>4+</Text>
                             <br/>
@@ -29,9 +29,9 @@ export const Abilities = () => {
                             Developer and Designer, specialized in <br/>UI/UX and Web Developer
                         </h3>
                         <S.AbilityWrapper >
-                            <Ability iconId={"computer"} text={"Front End Developer"}/>
-                            <Ability iconId={"paint"} text={"UI/UX Designer"}/>
-                            <Ability iconId={"thunder"} text={"Branding Designer"}/>
+                            <Ability iconId={"computer"} text={"Front End Developer"} marginPlus={177} marginText={"-3px 0 0 32px"}/>
+                            <Ability iconId={"paint"} text={"UI/UX Designer"} marginPlus={172}  marginText={"-3px 0 0 33px"}/>
+                            <Ability iconId={"thunder"} text={"Branding Designer"} marginPlus={168}  marginText={"-3px 0 0 33px"}/>
                         </S.AbilityWrapper>
                     </S.AbilitiesSection>
                 </FlexWrapper>

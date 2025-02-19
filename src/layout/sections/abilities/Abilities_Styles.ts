@@ -14,8 +14,6 @@ const Experience = styled.div`
   }
 `
 const TextExperience = styled.p`
-  padding-left: 10px;
-  
   display: inline-block;
   width: 207px;
   font-family: Playfair Display, sans-serif;
@@ -37,13 +35,13 @@ const AbilitiesSection = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 0 0 94px;
+  margin: 0 0 0 90px;
   @media screen and (max-width: 1394px) {
     margin: 0 auto;
   }
 
   h3 {
-    padding-bottom: 20px;
+    margin-top: 20px;
     ${font({family: '"Poppins", serif', weight: 700, Fmin: 24, Fmax: 40, lineHeight: 1.8})};
 
     @media screen and (max-width: 1394px) {

@@ -3,18 +3,21 @@ import React from 'react';
 import {Icon} from "../../../components/icon/Icon";
 import {Text} from "../../../components/Text";
 import {theme} from "../../../styles/Theme";
+
 type AbilityPropsType = {
     iconId: string
     text:string
+    marginPlus?: number
+    marginText?: string
 }
 
 export const Ability = (props:AbilityPropsType) => {
     return (
         <StyledAbility>
-            <IconWrapper>
-                <Icon iconId={props.iconId} margin={"172px 0 0 30px"} width={"28px"} height={"28px"} viewBox={"0 0 28 28"}></Icon>
+            <IconWrapper marginPlus={props.marginPlus} >
+                <Icon iconId={props.iconId}  width={"30px"} height={"30px"} viewBox={"0 0 30 30"}></Icon>
             </IconWrapper>
-            <Text color={"inherit"} display={"block"} margin={"0 0 0 30px"} fontWeight={"700"} fontFamily={"Poppins, sans-serif"}>{props.text}</Text>
+            <Text lineHeight={"1.2"} color={"inherit"} display={"block"} margin={props.marginText} fontWeight={"700"} fontFamily={"Poppins, sans-serif"} fontSize={"20px"} width={"100px"}>{props.text} </Text>
         </StyledAbility>
     );
 };
@@ -38,9 +41,15 @@ const StyledAbility = styled.div`
     height: 176px;
   }
 `
-const IconWrapper = styled.div`
-  margin: 172px 0 0 30px;
+
+type iconWrapperPropsType = {
+    marginPlus?: number
+}
+
+const IconWrapper = styled.div<iconWrapperPropsType>`
+  margin: ${props => props.marginPlus}px 0 0 36px;
   @media screen and (max-width: 600px){
     margin: 44px 0 0 30px;
   }
+
 `
