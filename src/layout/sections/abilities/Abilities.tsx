@@ -11,7 +11,7 @@ import { S } from './Abilities_Styles';
 export const Abilities = () => {
     return (
         <S.StyledAbilities>
-            <Container padding={"0 0 0 0px"}>
+            <Container padding={"0 0 0 0"}>
                 <FlexWrapper align={"center"} wrap={"wrap"} justify={"center"} >
                     <FlexWrapper direction={"column"} margin={"0 auto"} align={"center"} justify={"center"} padding={"0px 0 40px 0px"}>
                         <S.Experience>

@@ -41,7 +41,7 @@ const AbilitiesSection = styled.div`
   }
 
   h3 {
-    margin-top: 20px;
+    margin: 0 0 20px 0;
     ${font({family: '"Poppins", serif', weight: 700, Fmin: 24, Fmax: 40, lineHeight: 1.8})};
 
     @media screen and (max-width: 1394px) {
