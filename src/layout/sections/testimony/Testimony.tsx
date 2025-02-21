@@ -44,7 +44,7 @@ export const Testimony:React.FC = () => {
     // @ts-ignore
     return (
         <S.StyledTestimony>
-            <Container>
+            <Container display={"flex"}>
                 <S.AllWrapper>
                     <Carousel>
                         {reviews.map((review, index) => {
@@ -105,11 +105,11 @@ export const Testimony:React.FC = () => {
 
                         {pros.map((i, index) => {
                             return <S.ProWrapper key={index}>
-                                <Text fontSize={"30px"} fontWeight={"700"} lineHeight={"1.2"} width={"min-content"}>
+                                <Text   fontSize={"30px"} fontWeight={"700"} lineHeight={"1.2"} width={"100%"}>
                                     {i.field}
                                 </Text>
                                 <Text className={"value"} color={theme.colors.accent} fontSize={"50px"}
-                                      fontWeight={"700"} lineHeight={"1.2"} whiteSpace={"nowrap"}>
+                                      fontWeight={"700"} lineHeight={"1.2"} whiteSpace={"nowrap"} margin={"10px 0 0 0" }>
                                     {i.value}
                                 </Text>
                             </S.ProWrapper>

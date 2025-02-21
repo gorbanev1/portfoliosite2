@@ -3,6 +3,7 @@ import styled from "styled-components"
 type MainContainerPropsType = {
     maxWidth: string
     height?: string
+    margin?: string
 }
 
 const MainContainer = styled.div<MainContainerPropsType>`
@@ -15,6 +16,7 @@ const MainContainer = styled.div<MainContainerPropsType>`
   @media screen and (max-width: 500px) {
     //margin: 0 auto;
   }
+  margin: ${props => props.margin || "unset"};
 `
 const WatchWindow = styled.div`
   height: 100%;

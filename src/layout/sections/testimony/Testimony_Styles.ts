@@ -46,6 +46,7 @@ const ProsWrapper = styled.div`
 const ProWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   @media screen  and (max-width: 841px) {
     flex-direction: row;
     align-items: flex-start;

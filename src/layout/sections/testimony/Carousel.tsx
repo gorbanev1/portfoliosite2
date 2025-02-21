@@ -167,25 +167,25 @@ export const Carousel = ({children}) => {
             </S.MainContainer>
             <S.ReviewTextWrapper>
                 <S.ReviewText>
-                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"35px 0 0 "}
+                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"43px 0 0 "}
                           color={"#C4C4C4"}>“</Text>
-                    <S.MainContainer maxWidth={`${window.screen.width > 550 ? 490 : 335}px`}>
+                    <S.MainContainer maxWidth={`${window.screen.width > 550 ? 490 : 335}px`} margin={"-5px 0 0"} >
                         <S.WatchWindow>
                             <S.AllPagesContainer style={{
                                 transform: `translateX(${offset2}px)`
                             }}>{pages2}</S.AllPagesContainer>
                         </S.WatchWindow>
                     </S.MainContainer>
-                    <FlexWrapper gap={"15px"} margin={"0 0 0 15px"}>
+                    <FlexWrapper gap={"28px"} margin={"5px 0 0 15px"}>
                         <S.ArrowButton onClick={handleLeftArrowClick} style={{
                             opacity: opacityLeft,
                         }}>
-                            <Icon iconId={"leftArrow"} width={"27px"} height={"24px"}/>
+                            <Icon iconId={"leftArrow"} width={"30px"} height={"30px"} viewBox={"0 0 30 27"}/>
                         </S.ArrowButton>
                         <S.ArrowButton onClick={handleRightArrowClick} style={{
                             opacity: opacityRight
                         }}>
-                            <Icon iconId={"rightArrow"} width={"27px"} height={"24px"}/>
+                            <Icon iconId={"rightArrow"} width={"30px"} height={"30px"} viewBox={"0 0 30 27"}/>
                         </S.ArrowButton>
                     </FlexWrapper>
                 </S.ReviewText>
