@@ -27,7 +27,7 @@ export const Main:React.FC = () => {
     }, []);
 
     return (
-        <S.StyledMain>
+        <S.StyledMain id={"home"}>
 
             <Container maxwidth={"1440px"} padding={"0"}>
                 <S.MainWrapper>

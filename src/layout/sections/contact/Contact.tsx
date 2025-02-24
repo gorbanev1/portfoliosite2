@@ -14,7 +14,7 @@ const socials = ["group", "upwork", "youtube", "linkedin", "github",]
 
 export const Contact = () => {
     return (
-        <S.StyledContact>
+        <S.StyledContact id={"contact"}>
             <Container>
                 <S.ContactWrapper  >
                     <FlexWrapper  direction={"column"} gap={"30px"}>

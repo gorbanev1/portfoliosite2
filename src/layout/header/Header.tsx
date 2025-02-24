@@ -10,7 +10,7 @@ import {theme} from "../../styles/Theme";
 import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu";
 import { S } from './Header_Styles';
 
-const items = ["Home", "About", "Services"]
+
 
 export const Header:React.FC = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
@@ -22,8 +22,8 @@ export const Header:React.FC = () => {
          return () => window.removeEventListener("resize", handleWindowResize);
     }, []);
     return (<>
-                        {width< breakpoint ? <MobileMenu menuItems={items}/>
-                                            :<DesktopMenu menuItems={items}/>}
+                        {width< breakpoint ? <MobileMenu />
+                                            :<DesktopMenu />}
         </>
         )
 

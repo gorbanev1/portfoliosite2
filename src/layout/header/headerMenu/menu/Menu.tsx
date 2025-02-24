@@ -3,17 +3,36 @@ import styled from "styled-components";
 import {theme} from "../../../../styles/Theme";
 import { S } from '../HeaderMenu_Styles';
 
-export const Menu:React.FC<{ menuItems: Array<string>}> = (props: { menuItems: Array<string> }) => {
+const menuItems = [
+    {
+        title: "Home",
+    href: "home"
+    },
+    {
+        title: "About",
+        href: "about"
+    },
+    {
+        title: "Services",
+        href: "services"
+    }]
+
+export const Menu:React.FC = () => {
     return (
         <ul>
-            {props.menuItems.map((item, index) => {
+            {menuItems.map((item, index) => {
                 return (
                     <S.MenuItem key={index}>
-                        <S.Link href="src/layout/header/headerMenu/menu/Menu">
-                            {item}
-                            <S.Mask><span>{item}</span></S.Mask>
-                            <S.Mask><span>{item}</span></S.Mask>
-                        </S.Link>
+                        <S.NavLink
+                            activeClass="active"
+                            to={item.href}
+                            smooth={true}
+                            spy={true}
+                        >
+                            {item.title}
+                            <S.Mask><span>{item.title}</span></S.Mask>
+                            <S.Mask><span>{item.title}</span></S.Mask>
+                        </S.NavLink>
                     </S.MenuItem>
                 )
             })}

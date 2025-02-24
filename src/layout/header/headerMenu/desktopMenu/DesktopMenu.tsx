@@ -10,7 +10,7 @@ import {LinkButton} from "../../../../components/LinkButton";
 import {Text} from "../../../../components/Text";
 import {Container} from "../../../../components/Container";
 
-export const DesktopMenu: React.FC<{ menuItems: Array<string> }> = (props: { menuItems: Array<string> }) => {
+export const DesktopMenu: React.FC = () => {
     return (
         <S.Header>
 
@@ -18,7 +18,7 @@ export const DesktopMenu: React.FC<{ menuItems: Array<string> }> = (props: { men
                     <FlexWrapper justify={"space-between"} padding={"0 0 0 15px"} color={theme.colors.font}>
                         <Logo/>
                         <S.DesktopMenu>
-                            <Menu menuItems={props.menuItems}/>
+                            <Menu/>
                         </S.DesktopMenu>
                         <LinkButton display={"flex"} height={"50px"} width={"157px"}><Text
                             fontFamily={"Poppins, sans-serif"} fontWeight={"500"} fontSize={"20px"}> Contact

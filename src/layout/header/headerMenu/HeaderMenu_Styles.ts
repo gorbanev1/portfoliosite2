@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll"
 
 const Mask = styled.span`
   position: absolute;
@@ -23,6 +24,16 @@ const Mask = styled.span`
 const MenuItem = styled.li`
   position: relative;
 
+  
+`
+
+const NavLink = styled(Link)`
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: ${theme.colors.font};
+  color: transparent;
+
   &::before {
     content: "";
     display: inline-block;
@@ -36,7 +47,7 @@ const MenuItem = styled.li`
     transform: scale(0)
   }
 
-  &:hover {
+  &:hover, &.active {
     &::before {
       transform: scale(1);
     }
@@ -51,14 +62,6 @@ const MenuItem = styled.li`
     }
 
   }
-`
-
-const Link = styled.a`
-  font-family: Poppins, sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  color: ${theme.colors.font};
-  color: transparent;
 
 `
 
@@ -247,7 +250,7 @@ const Header = styled.header`
 `
 
 export const S={
-    Link,
+    NavLink,
     MenuItem,
     Mask,
     MobileMenu,
