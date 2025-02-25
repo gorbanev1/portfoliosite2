@@ -40,11 +40,16 @@ const ReviewTextWrapper = styled.div`
   //margin: 0 auto;
 
 `
-const ReviewText = styled.div`
+
+type ReviewTextPropsType = {
+    maxWidth: string
+}
+
+const ReviewText = styled.div<ReviewTextPropsType>`
   display: flex;
   flex-direction: column;
   margin: 0 108px 0 12px;
-  max-width: 490px;
+  max-width: ${props => props.maxWidth};
   width: 100%;
   @media screen and (max-width: 1193px) {
     margin: 0 10px 0 12px

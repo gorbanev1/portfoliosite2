@@ -10,15 +10,26 @@ import { S } from './Carousel_Styles';
 let PAGE1_WIDTH = 390
 let PAGE2_WIDTH = 490
 console.log(window.screen.width)
-if (window.screen.width < 500) {
-    PAGE1_WIDTH = 335
-    PAGE2_WIDTH = 335
-    console.log(console.log(window.screen.width < 500 ? 490 : 335 + "YYYYYYYYYYYYYYY"))
-}
+
 
 
 // @ts-ignore
 export const Carousel = ({children}) => {
+    const [page1Width, setPage1Width] = useState(window.screen.width > 550 ? 390 : 335)
+    const [page2Width, setPage2Width] = useState(window.screen.width > 550 ? 490 : 335)
+    const [page1Height, setPage1Height] = useState(window.screen.width > 550 ? 390 : 373)
+
+    useEffect(()=>{
+        window.addEventListener('resize', ()=>{
+            setPage1Width(window.screen.width > 550 ? 390 : 335)
+            setPage2Width(window.screen.width > 550 ? 490 : 335)
+            setPage1Height(window.screen.width > 550 ? 390 : 375)
+
+
+        })
+    }, [])
+
+
     const [pages, setPages] = useState([])
     const [pages2, setPages2] = useState([])
 
@@ -30,12 +41,12 @@ export const Carousel = ({children}) => {
 
     const handleLeftArrowClick = () => {
         setOffset((currentOffset) => {
-            const newOffset = currentOffset + PAGE1_WIDTH
+            const newOffset = currentOffset + page1Width
             console.log(newOffset)
             return Math.min(newOffset, 0)
         })
         setOffset2((currentOffset) => {
-            const newOffset = currentOffset + PAGE2_WIDTH
+            const newOffset = currentOffset + page2Width
             console.log(newOffset)
             if (Math.min(newOffset, 0) == 0) setArrowPos(0); else setArrowPos(1)
             return Math.min(newOffset, 0)
@@ -44,14 +55,14 @@ export const Carousel = ({children}) => {
     const handleRightArrowClick = () => {
         console.log("dsfsdfsdfdRRRRRRRRRR")
         setOffset((currentOffset) => {
-            const newOffset = currentOffset - PAGE1_WIDTH
-            const maxOffset = -(PAGE1_WIDTH * (pages.length - 1))
+            const newOffset = currentOffset - page1Width
+            const maxOffset = -(page1Width * (pages.length - 1))
             console.log(offset)
             return Math.max(newOffset, maxOffset)
         })
         setOffset2((currentOffset) => {
-            const newOffset = currentOffset - PAGE2_WIDTH
-            const maxOffset = -(PAGE2_WIDTH * (pages2.length - 1))
+            const newOffset = currentOffset - page2Width
+            const maxOffset = -(page2Width * (pages2.length - 1))
             console.log(offset)
             if (Math.max(newOffset, maxOffset) == maxOffset) setArrowPos(2); else setArrowPos(1)
             return Math.max(newOffset, maxOffset)
@@ -91,7 +102,7 @@ export const Carousel = ({children}) => {
     }
     useEffect(() => {
         setPages(
-            filterElements(PAGE1_WIDTH, "img")
+            filterElements(page1Width, "img")
             /* Children.map(children, (child) => {
                  return cloneElement((child), {
                      style: {
@@ -104,7 +115,7 @@ export const Carousel = ({children}) => {
         )
     }, [])
     useEffect(() => {
-        setPages2(filterElements(PAGE2_WIDTH, "p")
+        setPages2(filterElements(page2Width, "p")
             /*   Children.map(children, (child) => {
                    return cloneElement((child), {
                        style: {
@@ -131,11 +142,7 @@ export const Carousel = ({children}) => {
             width: "490px"
         }
     ]
-    if (window.screen.width < 550) {
-        PAGE1_WIDTH = 335
-        PAGE2_WIDTH = 335
-        console.log(window.screen.width < 500 && PAGE2_WIDTH)
-    }
+
     return (
         /*<>
             {sliderPages.map((page, index) => {
@@ -157,8 +164,10 @@ export const Carousel = ({children}) => {
             })}
         </>*/
         <S.ReviewWrapper>
-            <S.MainContainer maxWidth={`${window.screen.width > 550 ? 390 : 335}px`}
-                           height={`${window.screen.width > 550 ? 390 : 375}px`}>
+            <S.MainContainer maxWidth={`${page1Width}px`} height={`${page1Height}px`}>
+
+                {/*// maxWidth={`${window.screen.width > 550 ? 390 : 335}px`}*/}
+                {/*//            height={`${window.screen.width > 550 ? 390 : 375}px`}>*/}
                 <S.WatchWindow>
                     <S.AllPagesContainer style={{
                         transform: `translateX(${offset}px)`
@@ -166,10 +175,10 @@ export const Carousel = ({children}) => {
                 </S.WatchWindow>
             </S.MainContainer>
             <S.ReviewTextWrapper>
-                <S.ReviewText>
+                <S.ReviewText maxWidth={`${page2Width}`}>
                     <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"43px 0 0 "}
                           color={"#C4C4C4"}>“</Text>
-                    <S.MainContainer maxWidth={`${window.screen.width > 550 ? 490 : 335}px`} margin={"-5px 0 0"} >
+                    <S.MainContainer maxWidth={`${page2Width}px`} margin={"-5px 0 0"} >
                         <S.WatchWindow>
                             <S.AllPagesContainer style={{
                                 transform: `translateX(${offset2}px)`

@@ -40,7 +40,15 @@ const reviews = [
 
 
 export const Testimony:React.FC = () => {
+    const [page1Width, setPage1Width] = useState(window.screen.width > 550 ? 390 : 335)
+    const [page1Height, setPage1Height] = useState(window.screen.width > 550 ? 390 : 375)
 
+    useEffect(()=>{
+        window.addEventListener('resize', ()=> {
+            setPage1Width(window.screen.width > 550 ? 390 : 335)
+            setPage1Height(window.screen.width > 550 ? 390 : 375)
+        })
+    },[])
     // @ts-ignore
     return (
         <S.StyledTestimony id={"services"}>
@@ -48,7 +56,7 @@ export const Testimony:React.FC = () => {
                 <S.AllWrapper>
                     <Carousel>
                         {reviews.map((review, index) => {
-                            return <S.Photo width={"390px"} height={"390px"} src={review.iconId}/>
+                            return <S.Photo width={`${page1Width}px`} height={`${page1Height}px`} src={review.iconId}/>
                         })}
                         {reviews.map((review, index) => {
                             return <Text fontFamily={'"Poppins", sans-serif'} fontSize={"20px"} fontWeight={"700"}
