@@ -39,6 +39,8 @@ const StyledAbility = styled.div`
   }
   @media screen and (max-width: 600px){
     height: 176px;
+    padding-top: 3px;
+    
   }
 `
 
@@ -49,7 +51,7 @@ type iconWrapperPropsType = {
 const IconWrapper = styled.div<iconWrapperPropsType>`
   margin: ${props => props.marginPlus}px 0 0 36px;
   @media screen and (max-width: 600px){
-    margin: 44px 0 0 30px;
+    margin-left:  32px;
   }
 
 `

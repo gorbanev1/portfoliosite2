@@ -73,6 +73,17 @@ const ArrowButton = styled.button`
   cursor: pointer;
   color: darkgreen;
 `
+const QuotationMark = styled.p`
+  font-size:100px;
+  font-weight: 700;
+  line-height: 0.4;
+  margin: 43px 0 0 ;
+  color: #C4C4C4;
+  @media screen and (max-width: 600px) {
+    margin: 58px 0 0 ;
+  }
+`
+
 export const S={
     MainContainer,
     WatchWindow,
@@ -80,6 +91,7 @@ export const S={
     ReviewTextWrapper,
     ReviewText,
     ReviewWrapper,
-    ArrowButton
+    ArrowButton,
+    QuotationMark
     ,
 }

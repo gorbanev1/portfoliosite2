@@ -12,6 +12,7 @@ const ProsWrapper = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
   }
+
   
 
   @media screen  and (max-width: 901px) {
@@ -36,7 +37,7 @@ const ProsWrapper = styled.div`
     max-width: 520px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 0 0 0;
+    padding: 74px 0 0 0;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
@@ -56,6 +57,12 @@ const ProWrapper = styled.div`
       margin: -17px 0 0 0;
     }
   }
+  @media screen  and (max-width: 500px) {
+    gap: 27px;
+    flex-direction: column;
+    width: 70%;
+
+  }
 `
 
 const StyledTestimony = styled.section`
@@ -73,12 +80,16 @@ const AllWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  @media screen and (max-width: 1210px) {
+    flex-direction: column;
+    
+  }
   
   @media screen and (max-width: 901px) {
     width: min-content;
   }
   @media screen and (max-width: 500px) {
-    padding: 40px 0;
+    padding: 130px 0 95px;
   }
 
 `

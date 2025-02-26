@@ -176,8 +176,7 @@ export const Carousel = ({children}) => {
             </S.MainContainer>
             <S.ReviewTextWrapper>
                 <S.ReviewText maxWidth={`${page2Width}`}>
-                    <Text fontSize={"100px"} fontWeight={"700"} lineHeight={"0.4"} margin={"43px 0 0 "}
-                          color={"#C4C4C4"}>“</Text>
+                    <S.QuotationMark >“</S.QuotationMark>
                     <S.MainContainer maxWidth={`${page2Width}px`} margin={"-5px 0 0"} >
                         <S.WatchWindow>
                             <S.AllPagesContainer style={{
